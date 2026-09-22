@@ -1,0 +1,183 @@
+Medicine_ID,Medicine_Name,Category,Current_Stock,Daily_Sales,Supplier_Lead_Time,Reorder_Level,Expiry_Date,Seasonal_Demand,Unit_Price_INR,Minimum_Order_Quantity,Criticality,Storage_Condition,Stock_Status,Expiry_Months_Remaining,Days_of_Inventory,Lead_Time_Demand,Safety_Stock_Buffer,Buffer_Ratio,Stock_to_Reorder_Ratio,Inventory_Valuation_INR,Safety_Stock_Recommended,Reorder_Point_Recommended,EOQ_Recommended,Current_ROP_Gap
+MED001,Amoxicillin 500mg,Antibiotics,176,19.5,4,94,2027-10-15,High_Monsoon,120,10,Vital,Room Temperature,0,12.8,9.03,78.0,98.0,2.256,1.872,21120,20,98,386,-4
+MED002,Azithromycin 500mg,Antibiotics,10,14.7,2,52,2027-05-18,High_Winter,140,50,Vital,Room Temperature,1,7.9,0.68,29.4,-19.4,0.34,0.192,1400,11,41,310,11
+MED003,Ciprofloxacin 500mg,Antibiotics,498,29.2,3,129,2029-03-08,High_Monsoon,85,20,Essential,Room Temperature,0,29.6,17.05,87.6,410.4,5.685,3.86,42330,25,113,560,16
+MED004,Cefixime 200mg,Antibiotics,223,30.1,4,215,2027-04-18,High_Monsoon,160,20,Vital,Room Temperature,0,6.9,7.41,120.4,102.6,1.852,1.037,35680,30,151,415,64
+MED005,Augmentin 625mg,Antibiotics,44,6.0,3,23,2027-11-14,High_Winter,210,30,Vital,Room Temperature,0,13.8,7.33,18.0,26.0,2.444,1.913,9240,6,24,162,-1
+MED006,Doxycycline 100mg,Antibiotics,204,25.4,4,165,2028-09-09,High_Monsoon,45,20,Essential,Room Temperature,0,23.7,8.03,101.6,102.4,2.008,1.236,9180,26,128,718,37
+MED007,Metronidazole 400mg,Antibiotics,224,17.3,4,86,2027-07-17,High_Monsoon,32,10,Essential,Room Temperature,0,9.9,12.95,69.2,154.8,3.237,2.605,7168,18,88,703,-2
+MED008,Levofloxacin 500mg,Antibiotics,122,23.0,5,149,2027-08-16,High_Winter,115,20,Essential,Room Temperature,0,10.9,5.3,115.0,7.0,1.061,0.819,14030,26,141,428,8
+MED009,Clarithromycin 500mg,Antibiotics,242,15.4,5,85,2027-07-17,High_Winter,280,10,Desirable,Room Temperature,0,9.9,15.71,77.0,165.0,3.143,2.847,67760,17,94,225,-9
+MED010,Cephalexin 500mg,Antibiotics,99,13.8,7,168,2027-11-14,High_Monsoon,95,50,Essential,Room Temperature,1,13.8,7.17,96.6,2.4,1.025,0.589,9405,19,116,365,52
+MED011,Ofloxacin-Ornidazole 200/500mg,Antibiotics,627,26.1,8,299,2028-01-13,High_Monsoon,78,10,Essential,Room Temperature,0,15.8,24.02,208.8,418.2,3.003,2.097,48906,37,246,553,53
+MED012,Ampicillin 500mg,Antibiotics,61,10.3,6,86,2027-12-14,Stable_All_Season,65,10,Desirable,Room Temperature,1,14.8,5.92,61.8,-0.8,0.987,0.709,3965,13,75,381,11
+MED013,Erythromycin 250mg,Antibiotics,81,45.2,4,275,2029-04-07,Stable_All_Season,52,20,Desirable,Room Temperature,1,30.6,1.79,180.8,-99.8,0.448,0.295,4212,45,226,891,49
+MED014,Linezolid 600mg,Antibiotics,5,9.7,3,51,2028-12-08,Stable_All_Season,350,50,Vital,Room Temperature,1,26.6,0.52,29.1,-24.1,0.172,0.098,1750,9,39,160,12
+MED015,Cotrimoxazole 480mg,Antibiotics,5,12.9,5,76,2029-05-07,Stable_All_Season,40,20,Essential,Room Temperature,1,31.6,0.39,64.5,-59.5,0.078,0.066,200,15,80,543,-4
+MED016,Rifaximin 400mg,Antibiotics,162,8.1,8,110,2027-07-17,High_Monsoon,290,10,Desirable,Room Temperature,0,9.9,20.0,64.8,97.2,2.5,1.473,46980,12,77,160,33
+MED017,Cefuroxime Axetil 500mg,Antibiotics,4,13.4,3,59,2028-04-12,High_Winter,260,30,Vital,Room Temperature,1,18.8,0.3,40.2,-36.2,0.1,0.068,1040,12,53,217,6
+MED018,Clindamycin 300mg,Antibiotics,16,10.8,7,121,2028-11-08,Stable_All_Season,180,10,Essential,Room Temperature,1,25.7,1.48,75.6,-59.6,0.212,0.132,2880,15,91,234,30
+MED019,Norfloxacin 400mg,Antibiotics,303,11.5,10,146,2027-11-14,High_Monsoon,62,10,Essential,Room Temperature,0,13.8,26.35,115.0,188.0,2.635,2.075,18786,18,133,412,13
+MED020,Paracetamol 650mg (Dolo),Analgesics & Antipyretics,186,15.7,4,80,2027-04-18,High_Monsoon,35,50,Vital,Room Temperature,0,6.9,11.85,62.8,123.2,2.962,2.325,6510,16,79,640,1
+MED021,Ibuprofen 400mg,Analgesics & Antipyretics,177,19.7,6,188,2029-03-08,Stable_All_Season,28,50,Essential,Room Temperature,0,29.6,8.98,118.2,58.8,1.497,0.941,4956,24,143,802,45
+MED022,Aceclofenac + Paracetamol,Analgesics & Antipyretics,340,19.9,5,116,2027-07-17,Stable_All_Season,55,50,Essential,Room Temperature,0,9.9,17.09,99.5,240.5,3.417,2.931,18700,22,122,575,-6
+MED023,Diclofenac 50mg,Analgesics & Antipyretics,420,25.9,6,247,2028-03-13,Stable_All_Season,30,10,Essential,Room Temperature,0,17.8,16.22,155.4,264.6,2.703,1.7,12600,32,188,888,59
+MED024,Tramadol 50mg,Analgesics & Antipyretics,27,23.0,2,79,2029-02-06,Stable_All_Season,75,50,Vital,Room Temperature,1,28.6,1.17,46.0,-19.0,0.587,0.342,2025,17,63,529,16
+MED025,Mefenamic Acid 500mg,Analgesics & Antipyretics,110,22.4,5,193,2028-04-12,Stable_All_Season,42,50,Essential,Room Temperature,1,18.8,4.91,112.0,-2.0,0.982,0.57,4620,25,137,698,56
+MED026,Naproxen 500mg,Analgesics & Antipyretics,64,19.3,3,68,2029-04-07,Stable_All_Season,60,30,Desirable,Room Temperature,0,30.6,3.32,57.9,6.1,1.105,0.941,3840,17,75,542,-7
+MED027,Paracetamol 500mg (Crocin),Analgesics & Antipyretics,90,10.8,2,31,2028-11-08,High_Monsoon,25,10,Vital,Room Temperature,0,25.7,8.33,21.6,68.4,4.167,2.903,2250,8,30,628,1
+MED028,Ketorolac 10mg,Analgesics & Antipyretics,377,18.9,6,145,2027-05-18,Stable_All_Season,68,20,Desirable,Room Temperature,0,7.9,19.95,113.4,263.6,3.325,2.6,25636,23,137,504,8
+MED029,Ultracet (Tramadol+PCM),Analgesics & Antipyretics,71,6.4,5,50,2029-03-08,Stable_All_Season,125,50,Vital,Room Temperature,0,29.6,11.09,32.0,39.0,2.219,1.42,8875,8,40,217,10
+MED030,Etoricoxib 90mg,Analgesics & Antipyretics,435,15.6,8,203,2029-04-07,High_Winter,110,100,Essential,Room Temperature,0,30.6,27.88,124.8,310.2,3.486,2.143,47850,22,147,360,56
+MED031,Piroxicam 20mg,Analgesics & Antipyretics,72,17.1,4,90,2026-12-19,Stable_All_Season,48,10,Desirable,Room Temperature,0,3.0,4.21,68.4,3.6,1.053,0.8,3456,17,86,571,4
+MED032,Aspirin 75mg (Ecosprin),Analgesics & Antipyretics,93,21.4,4,100,2028-09-09,Stable_All_Season,15,30,Vital,Room Temperature,0,23.7,4.35,85.6,7.4,1.086,0.93,1395,22,108,1141,-8
+MED033,Aspirin 150mg,Analgesics & Antipyretics,54,16.3,3,83,2028-09-09,Stable_All_Season,18,10,Vital,Room Temperature,0,23.7,3.31,48.9,5.1,1.104,0.651,972,14,63,910,20
+MED034,Paracetamol Oral Suspension 120mg,Analgesics & Antipyretics,62,19.7,7,201,2027-12-14,High_Monsoon,40,20,Vital,Room Temperature,1,14.8,3.15,137.9,-75.9,0.45,0.308,2480,26,164,671,37
+MED035,Ibuprofen + Paracetamol syrup,Analgesics & Antipyretics,16,19.7,4,136,2027-01-18,High_Monsoon,45,10,Essential,Room Temperature,1,3.9,0.81,78.8,-62.8,0.203,0.118,720,20,99,633,37
+MED036,Indomethacin 25mg,Analgesics & Antipyretics,8,15.4,5,117,2028-07-11,Stable_All_Season,50,10,Desirable,Room Temperature,1,21.7,0.52,77.0,-69.0,0.104,0.068,400,17,94,531,23
+MED037,Celecoxib 200mg,Analgesics & Antipyretics,113,12.2,5,102,2027-11-14,Stable_All_Season,130,20,Desirable,Room Temperature,0,13.8,9.26,61.0,52.0,1.852,1.108,14690,14,75,293,27
+MED038,Combiflam Tablet,Analgesics & Antipyretics,51,13.2,3,47,2027-09-15,Stable_All_Season,40,100,Vital,Room Temperature,0,11.8,3.86,39.6,11.4,1.288,1.085,2040,12,52,549,-5
+MED039,Amlodipine 5mg,Cardiovascular & Antihypertensives,3,5.7,4,26,2028-08-10,Stable_All_Season,25,10,Vital,Room Temperature,1,22.7,0.53,22.8,-19.8,0.132,0.115,75,6,29,457,-3
+MED040,Telmisartan 40mg,Cardiovascular & Antihypertensives,90,8.8,4,45,2028-12-08,High_Winter,65,10,Vital,Room Temperature,0,26.6,10.23,35.2,54.8,2.557,2.0,5850,9,45,352,0
+MED041,Atorvastatin 10mg,Cardiovascular & Antihypertensives,36,11.3,5,79,2027-02-17,Stable_All_Season,85,30,Vital,Room Temperature,1,4.9,3.19,56.5,-20.5,0.637,0.456,3060,13,70,349,9
+MED042,Atorvastatin 20mg,Cardiovascular & Antihypertensives,65,9.4,4,54,2029-05-07,Stable_All_Season,140,10,Vital,Room Temperature,0,31.6,6.91,37.6,27.4,1.729,1.204,9100,10,48,248,6
+MED043,Metoprolol Succinate 25mg,Cardiovascular & Antihypertensives,221,23.6,3,79,2026-12-19,High_Winter,70,50,Vital,Room Temperature,0,3.0,9.36,70.8,150.2,3.121,2.797,15470,21,92,555,-13
+MED044,Metoprolol Succinate 50mg,Cardiovascular & Antihypertensives,100,11.5,4,81,2028-05-12,High_Winter,110,20,Vital,Room Temperature,0,19.7,8.7,46.0,54.0,2.174,1.235,11000,12,58,309,23
+MED045,Losartan Potassium 50mg,Cardiovascular & Antihypertensives,18,7.9,5,66,2027-10-15,Stable_All_Season,55,30,Vital,Room Temperature,1,12.8,2.28,39.5,-21.5,0.456,0.273,990,9,49,363,17
+MED046,Rosuvastatin 10mg,Cardiovascular & Antihypertensives,26,12.0,3,61,2027-01-18,Stable_All_Season,120,10,Vital,Room Temperature,1,3.9,2.17,36.0,-10.0,0.722,0.426,3120,11,47,303,14
+MED047,Clopidogrel 75mg,Cardiovascular & Antihypertensives,61,7.8,3,41,2028-12-08,High_Winter,95,10,Vital,Room Temperature,0,26.6,7.82,23.4,37.6,2.607,1.488,5795,7,31,274,10
+MED048,Enalapril 5mg,Cardiovascular & Antihypertensives,956,21.9,7,182,2028-11-08,Stable_All_Season,35,20,Essential,Room Temperature,0,25.7,43.65,153.3,802.7,6.236,5.253,33460,29,183,756,-1
+MED049,Ramipril 5mg,Cardiovascular & Antihypertensives,81,4.4,6,43,2028-04-12,High_Winter,60,10,Vital,Room Temperature,0,18.8,18.41,26.4,54.6,3.068,1.884,4860,6,33,259,10
+MED050,Bisoprolol 5mg,Cardiovascular & Antihypertensives,246,9.4,10,109,2028-01-13,Stable_All_Season,80,20,Essential,Room Temperature,0,15.8,26.17,94.0,152.0,2.617,2.257,19680,15,109,328,0
+MED051,Hydrochlorothiazide 12.5mg,Cardiovascular & Antihypertensives,201,15.5,4,94,2028-08-10,High_Summer,22,20,Essential,Room Temperature,0,22.7,12.97,62.0,139.0,3.242,2.138,4422,16,78,802,16
+MED052,Chlorthalidone 12.5mg,Cardiovascular & Antihypertensives,227,10.4,6,88,2027-10-15,High_Summer,45,50,Essential,Room Temperature,0,12.8,21.83,62.4,164.6,3.638,2.58,10215,13,76,460,12
+MED053,Diltiazem 60mg,Cardiovascular & Antihypertensives,27,6.9,6,48,2027-12-14,Stable_All_Season,58,10,Essential,Room Temperature,1,14.8,3.91,41.4,-14.4,0.652,0.562,1566,9,51,330,-3
+MED054,Spironolactone 25mg,Cardiovascular & Antihypertensives,300,5.0,8,69,2027-06-17,Stable_All_Season,48,10,Essential,Room Temperature,0,8.9,60.0,40.0,260.0,7.5,4.348,14400,7,47,309,22
+MED055,Telmisartan + Hydrochlorothiazide,Cardiovascular & Antihypertensives,223,10.9,4,59,2027-09-15,Stable_All_Season,85,30,Vital,Room Temperature,0,11.8,20.46,43.6,179.4,5.115,3.78,18955,11,55,343,4
+MED056,Amlodipine + Atenolol,Cardiovascular & Antihypertensives,168,8.0,7,92,2027-06-17,Stable_All_Season,52,50,Essential,Room Temperature,0,8.9,21.0,56.0,112.0,3.0,1.826,8736,11,67,375,25
+MED057,Nebivolol 5mg,Cardiovascular & Antihypertensives,180,5.2,6,44,2027-12-14,Stable_All_Season,95,50,Essential,Room Temperature,0,14.8,34.62,31.2,148.8,5.769,4.091,17100,7,39,224,5
+MED058,Metformin 500mg,Antidiabetics,60,9.7,2,24,2028-02-12,Stable_All_Season,22,10,Vital,Room Temperature,0,16.8,6.19,19.4,40.6,3.093,2.5,1320,7,27,635,-3
+MED059,Metformin 1000mg SR,Antidiabetics,51,12.0,2,31,2027-07-17,Stable_All_Season,42,100,Vital,Room Temperature,0,9.9,4.25,24.0,27.0,2.125,1.645,2142,9,33,511,-2
+MED060,Glimepiride 1mg,Antidiabetics,297,13.0,3,50,2027-03-19,Stable_All_Season,38,20,Vital,Room Temperature,0,5.9,22.85,39.0,258.0,7.615,5.94,11286,12,51,559,-1
+MED061,Glimepiride 2mg,Antidiabetics,223,6.4,4,39,2027-12-14,Stable_All_Season,65,20,Vital,Room Temperature,0,14.8,34.84,25.6,197.4,8.711,5.718,14495,7,33,300,6
+MED062,Vildagliptin 50mg,Antidiabetics,6,21.9,2,75,2027-04-18,Stable_All_Season,160,20,Vital,Room Temperature,1,6.9,0.27,43.8,-37.8,0.137,0.08,960,16,60,354,15
+MED063,Sitagliptin 100mg,Antidiabetics,369,4.7,10,57,2028-12-08,Stable_All_Season,240,20,Vital,Room Temperature,0,26.6,78.51,47.0,322.0,7.851,6.474,88560,8,55,134,2
+MED064,Teneligliptin 20mg,Antidiabetics,612,11.6,7,141,2028-08-10,Stable_All_Season,95,20,Essential,Room Temperature,0,22.7,52.76,81.2,530.8,7.537,4.34,58140,16,98,334,43
+MED065,Dapagliflozin 10mg,Antidiabetics,21,8.4,3,32,2027-03-19,High_Summer,180,20,Vital,Room Temperature,1,5.9,2.5,25.2,-4.2,0.833,0.656,3780,8,34,207,-2
+MED066,Empagliflozin 25mg,Antidiabetics,33,5.1,5,37,2029-02-06,High_Summer,210,30,Vital,Room Temperature,0,28.6,6.47,25.5,7.5,1.294,0.892,6930,6,32,149,5
+MED067,Glipizide 5mg,Antidiabetics,244,18.5,4,122,2028-02-12,Stable_All_Season,28,20,Essential,Room Temperature,0,16.8,13.19,74.0,170.0,3.297,2.0,6832,19,93,777,29
+MED068,Voglibose 0.2mg,Antidiabetics,38,6.6,3,27,2029-05-07,Stable_All_Season,72,20,Essential,Room Temperature,0,31.6,5.76,19.8,18.2,1.919,1.407,2736,6,26,290,1
+MED069,Voglibose 0.3mg,Antidiabetics,256,14.4,6,142,2028-10-09,Stable_All_Season,90,20,Essential,Room Temperature,0,24.7,17.78,86.4,169.6,2.963,1.803,23040,18,105,383,37
+MED070,Gliclazide 80mg,Antidiabetics,88,18.0,4,82,2027-01-18,Stable_All_Season,55,30,Essential,Room Temperature,0,3.9,4.89,72.0,16.0,1.222,1.073,4840,18,90,547,-8
+MED071,Insulin Glargine 100IU/ml Pen,Antidiabetics,16,9.8,2,23,2027-10-15,High_Summer,650,10,Vital,Cold Chain (2-8C),1,12.8,1.63,19.6,-3.6,0.816,0.696,10400,7,27,118,-4
+MED072,Human Mixtard 30/70 100IU,Antidiabetics,31,8.2,4,51,2029-01-07,High_Summer,215,10,Vital,Room Temperature,1,27.6,3.78,32.8,-1.8,0.945,0.608,6665,9,42,187,9
+MED073,Metformin + Glimepiride 500/2,Antidiabetics,41,6.4,3,22,2027-04-18,Stable_All_Season,75,20,Vital,Room Temperature,0,6.9,6.41,19.2,21.8,2.135,1.864,3075,6,26,280,-4
+MED074,Metformin + Vildagliptin 500/50,Antidiabetics,173,8.8,2,25,2028-11-08,Stable_All_Season,195,30,Vital,Room Temperature,0,25.7,19.66,17.6,155.4,9.83,6.92,33735,7,25,203,0
+MED075,Pioglitazone 15mg,Antidiabetics,208,7.1,8,92,2028-02-12,Stable_All_Season,48,10,Desirable,Room Temperature,0,16.8,29.3,56.8,151.2,3.662,2.261,9984,10,67,368,25
+MED076,Glibenclamide 5mg,Antidiabetics,128,5.1,7,40,2027-06-17,Stable_All_Season,18,20,Essential,Room Temperature,0,8.9,25.1,35.7,92.3,3.585,3.2,2304,7,43,509,-3
+MED077,Pantoprazole 40mg,Gastrointestinal,22,28.1,3,119,2028-02-12,Stable_All_Season,75,20,Vital,Room Temperature,1,16.8,0.78,84.3,-62.3,0.261,0.185,1650,25,110,585,9
+MED078,Omeprazole 20mg,Gastrointestinal,206,17.6,4,104,2027-12-14,Stable_All_Season,45,10,Essential,Room Temperature,0,14.8,11.7,70.4,135.6,2.926,1.981,9270,18,89,598,15
+MED079,Rabeprazole 20mg,Gastrointestinal,141,8.5,6,77,2028-02-12,Stable_All_Season,90,30,Essential,Room Temperature,0,16.8,16.59,51.0,90.0,2.765,1.831,12690,11,62,294,15
+MED080,Esomeprazole 40mg,Gastrointestinal,97,7.6,6,58,2027-05-18,High_Monsoon,115,20,Essential,Room Temperature,0,7.9,12.76,45.6,51.4,2.127,1.672,11155,10,56,246,2
+MED081,Domperidone 10mg,Gastrointestinal,54,9.2,6,94,2029-05-07,High_Monsoon,30,10,Essential,Room Temperature,1,31.6,5.87,55.2,-1.2,0.978,0.574,1620,12,68,529,26
+MED082,Pantoprazole + Domperidone (Pan-D),Gastrointestinal,721,16.0,10,189,2029-03-08,High_Monsoon,135,20,Vital,Room Temperature,0,29.6,45.06,160.0,561.0,4.506,3.815,97335,25,185,329,4
+MED083,Ranitidine 150mg,Gastrointestinal,164,10.6,7,124,2027-10-15,Stable_All_Season,24,30,Desirable,Room Temperature,0,12.8,15.47,74.2,89.8,2.21,1.323,3936,14,89,635,35
+MED084,Ondansetron 4mg,Gastrointestinal,78,10.2,4,65,2027-05-18,High_Monsoon,42,30,Vital,Room Temperature,0,7.9,7.65,40.8,37.2,1.912,1.2,3276,11,52,471,13
+MED085,Sucralfate Suspension 200ml,Gastrointestinal,43,20.8,6,170,2027-04-18,High_Summer,165,20,Essential,Room Temperature,1,6.9,2.07,124.8,-81.8,0.345,0.253,7095,26,151,340,19
+MED086,Lactulose Syrup 200ml,Gastrointestinal,543,24.3,7,278,2028-11-08,High_Summer,190,20,Essential,Room Temperature,0,25.7,22.35,170.1,372.9,3.192,1.953,103170,32,203,342,75
+MED087,Loperamide 2mg,Gastrointestinal,453,12.0,7,116,2027-10-15,High_Monsoon,20,50,Essential,Room Temperature,0,12.8,37.75,84.0,369.0,5.393,3.905,9060,16,100,740,16
+MED088,Dicyclomine + Paracetamol,Gastrointestinal,60,17.0,7,200,2029-03-08,High_Monsoon,35,30,Essential,Room Temperature,1,29.6,3.53,119.0,-59.0,0.504,0.3,2100,23,142,666,58
+MED089,Oral Rehydration Salts (ORS) Sachet,Gastrointestinal,273,18.4,5,135,2027-12-14,High_Summer,18,20,Vital,Room Temperature,0,14.8,14.84,92.0,181.0,2.967,2.022,4914,21,113,966,22
+MED090,Cremaffin Syrup 200ml,Gastrointestinal,34,6.0,5,49,2028-12-08,Stable_All_Season,150,20,Desirable,Room Temperature,0,26.6,5.67,30.0,4.0,1.133,0.694,5100,7,37,192,12
+MED091,Gelusil MPS Antacid Liquid,Gastrointestinal,280,9.8,4,49,2027-05-18,High_Summer,110,20,Desirable,Room Temperature,0,7.9,28.57,39.2,240.8,7.143,5.714,30800,10,50,286,-1
+MED092,Digestive Enzyme Syrup 200ml,Gastrointestinal,38,10.4,6,101,2029-04-07,High_Winter,130,20,Desirable,Room Temperature,1,30.6,3.65,62.4,-24.4,0.609,0.376,4940,13,76,271,25
+MED093,Probiotic Capsule (Sporlac),Gastrointestinal,422,19.7,7,155,2027-09-15,High_Monsoon,85,20,Essential,Room Temperature,0,11.8,21.42,137.9,284.1,3.06,2.723,35870,26,164,460,-9
+MED094,Mesalamine 400mg,Gastrointestinal,29,5.5,6,48,2029-04-07,Stable_All_Season,220,20,Desirable,Room Temperature,1,30.6,5.27,33.0,-4.0,0.879,0.604,6380,7,40,152,8
+MED095,Esomeprazole + Domperidone,Gastrointestinal,411,21.1,6,201,2027-10-15,Stable_All_Season,145,20,Essential,Room Temperature,0,12.8,19.48,126.6,284.4,3.246,2.045,59595,26,153,365,48
+MED096,Montelukast + Levocetirizine,Respiratory & Antiasthmatics,38,2.4,3,11,2027-07-17,High_Winter,110,50,Vital,Room Temperature,0,9.9,15.83,7.2,30.8,5.278,3.455,4180,3,11,142,0
+MED097,Salbutamol Inhaler (Asthalin),Respiratory & Antiasthmatics,156,3.3,4,15,2027-04-18,High_Winter,160,50,Vital,Room Temperature,0,6.9,47.27,13.2,142.8,11.818,10.4,24960,4,18,138,-3
+MED098,Budesonide Inhaler (Budecort 200),Respiratory & Antiasthmatics,29,3.5,2,8,2027-10-15,High_Winter,280,50,Vital,Room Temperature,0,12.8,8.29,7.0,22.0,4.143,3.625,8120,3,10,107,-2
+MED099,Formoterol + Budesonide (Foracort 200),Respiratory & Antiasthmatics,159,10.9,6,87,2028-06-11,High_Winter,420,20,Vital,Room Temperature,0,20.7,14.59,65.4,93.6,2.431,1.828,66780,14,80,154,7
+MED100,Deriphyllin 150mg,Respiratory & Antiasthmatics,144,3.1,6,22,2029-01-07,High_Winter,25,20,Essential,Room Temperature,0,27.6,46.45,18.6,125.4,7.742,6.545,3600,4,23,337,-1
+MED101,Acebrophylline 100mg,Respiratory & Antiasthmatics,40,7.7,10,116,2029-02-06,High_Winter,120,10,Essential,Room Temperature,1,28.6,5.19,77.0,-37.0,0.519,0.345,4800,13,90,242,26
+MED102,Ambroxol + Terbutaline Cough Syrup,Respiratory & Antiasthmatics,116,5.0,6,46,2028-08-10,High_Winter,85,10,Essential,Room Temperature,0,22.7,23.2,30.0,86.0,3.867,2.522,9860,7,37,232,9
+MED103,Dextromethorphan Cough Syrup 100ml,Respiratory & Antiasthmatics,164,4.4,14,89,2027-12-14,High_Winter,95,20,Essential,Room Temperature,0,14.8,37.27,61.6,102.4,2.662,1.843,15580,9,71,206,18
+MED104,Levosalbutamol Inhaler 50mcg,Respiratory & Antiasthmatics,33,2.5,4,15,2028-03-13,High_Winter,175,20,Vital,Room Temperature,0,17.8,13.2,10.0,23.0,3.3,2.2,5775,3,13,115,2
+MED105,Ipratropium Respules 2.5ml,Respiratory & Antiasthmatics,23,6.0,4,35,2027-03-19,High_Winter,45,30,Vital,Cold Chain (2-8C),1,5.9,3.83,24.0,-1.0,0.958,0.657,1035,6,30,349,5
+MED106,Budesonide Respules 0.5mg,Respiratory & Antiasthmatics,218,14.2,4,73,2029-03-08,High_Winter,55,30,Vital,Cold Chain (2-8C),0,29.6,15.35,56.8,161.2,3.838,2.986,11990,15,72,486,1
+MED107,Theophylline SR 400mg,Respiratory & Antiasthmatics,6,4.4,5,27,2027-07-17,High_Winter,42,20,Essential,Room Temperature,1,9.9,1.36,22.0,-16.0,0.273,0.222,252,5,27,310,0
+MED108,Levocetirizine 5mg,Respiratory & Antiasthmatics,225,9.4,7,83,2028-11-08,High_Monsoon,35,10,Essential,Room Temperature,0,25.7,23.94,65.8,159.2,3.419,2.711,7875,13,79,496,4
+MED109,Fexofenadine 120mg,Respiratory & Antiasthmatics,1,4.3,4,27,2028-08-10,High_Monsoon,115,30,Essential,Room Temperature,1,22.7,0.23,17.2,-16.2,0.058,0.037,115,5,23,185,4
+MED110,Fexofenadine 180mg,Respiratory & Antiasthmatics,17,2.6,5,22,2028-07-11,High_Monsoon,150,50,Essential,Room Temperature,0,21.7,6.54,13.0,4.0,1.308,0.773,2550,3,16,126,6
+MED111,Cetirizine 10mg,Respiratory & Antiasthmatics,28,4.2,5,34,2028-08-10,High_Monsoon,20,20,Essential,Room Temperature,0,22.7,6.67,21.0,7.0,1.333,0.824,560,5,26,438,8
+MED112,Chlorpheniramine Maleate 4mg,Respiratory & Antiasthmatics,57,4.9,4,33,2028-01-13,High_Monsoon,15,20,Desirable,Room Temperature,0,15.8,11.63,19.6,37.4,2.908,1.727,855,5,25,546,8
+MED113,Salmeterol + Fluticasone Inhaler,Respiratory & Antiasthmatics,388,16.7,3,84,2029-01-07,High_Winter,460,100,Vital,Room Temperature,0,27.6,23.23,50.1,337.9,7.745,4.619,178480,15,66,183,18
+MED114,Bromhexine 8mg Tablet,Respiratory & Antiasthmatics,11,7.7,10,91,2027-05-18,High_Winter,28,20,Desirable,Room Temperature,1,7.9,1.43,77.0,-66.0,0.143,0.121,308,13,90,501,1
+MED115,Betamethasone Cream 20g,Dermatological & Topicals,162,14.2,4,73,2029-02-06,High_Summer,42,20,Essential,Room Temperature,0,28.6,11.41,56.8,105.2,2.852,2.219,6804,15,72,556,1
+MED116,Clobetasol Propionate 0.05% 30g,Dermatological & Topicals,2,5.1,8,56,2028-01-13,High_Monsoon,85,30,Essential,Room Temperature,1,15.8,0.39,40.8,-38.8,0.049,0.036,170,8,49,234,7
+MED117,Mupirocin Ointment 2% 5g,Dermatological & Topicals,32,4.1,3,17,2027-03-19,High_Monsoon,95,20,Vital,Room Temperature,0,5.9,7.8,12.3,19.7,2.602,1.882,3040,4,17,199,0
+MED118,Fusidic Acid Cream 10g,Dermatological & Topicals,12,5.8,5,51,2028-11-08,High_Monsoon,110,10,Essential,Room Temperature,1,25.7,2.07,29.0,-17.0,0.414,0.235,1320,7,36,220,15
+MED119,Clotrimazole Cream 1% 20g,Dermatological & Topicals,108,7.5,6,68,2029-01-07,High_Monsoon,55,20,Essential,Room Temperature,0,27.6,14.4,45.0,63.0,2.4,1.588,5940,10,55,353,13
+MED120,Ketoconazole Cream 2% 30g,Dermatological & Topicals,0,1.9,6,18,2027-06-17,High_Monsoon,140,20,Essential,Room Temperature,1,8.9,0.0,11.4,-11.4,0.0,0.0,0,3,15,112,3
+MED121,Silver Sulfadiazine Cream 50g,Dermatological & Topicals,190,9.2,6,87,2027-11-14,High_Summer,75,20,Vital,Room Temperature,0,13.8,20.65,55.2,134.8,3.442,2.184,14250,12,68,335,19
+MED122,Permethrin Lotion 5% 60ml,Dermatological & Topicals,18,3.5,7,39,2027-07-17,High_Monsoon,65,30,Desirable,Room Temperature,1,9.9,5.14,24.5,-6.5,0.735,0.462,1170,5,30,222,9
+MED123,Hydrocortisone Cream 1% 15g,Dermatological & Topicals,85,6.7,6,70,2028-08-10,High_Summer,48,10,Essential,Room Temperature,0,22.7,12.69,40.2,44.8,2.114,1.214,4080,9,50,357,20
+MED124,Terbinafine Cream 1% 15g,Dermatological & Topicals,158,5.9,10,84,2027-06-17,High_Monsoon,85,50,Essential,Room Temperature,0,8.9,26.78,59.0,99.0,2.678,1.881,13430,10,69,252,15
+MED125,Calamine Lotion 100ml,Dermatological & Topicals,60,5.5,4,25,2027-07-17,High_Summer,90,30,Desirable,Room Temperature,0,9.9,10.91,22.0,38.0,2.727,2.4,5400,6,28,237,-3
+MED126,Nadifloxacin Cream 1% 10g,Dermatological & Topicals,68,3.8,6,38,2028-05-12,High_Summer,125,20,Desirable,Room Temperature,0,19.7,17.89,22.8,45.2,2.982,1.789,8500,5,28,167,10
+MED127,Povidone Iodine Ointment 5% 20g,Dermatological & Topicals,0,5.4,6,58,2029-05-07,Stable_All_Season,50,20,Vital,Room Temperature,1,31.6,0.0,32.4,-32.4,0.0,0.0,0,7,40,314,18
+MED128,Luliconazole Cream 1% 20g,Dermatological & Topicals,141,9.6,6,74,2029-05-07,High_Monsoon,185,20,Essential,Room Temperature,0,31.6,14.69,57.6,83.4,2.448,1.905,26085,12,70,218,4
+MED129,Eberconazole Cream 1% 15g,Dermatological & Topicals,140,1.6,7,17,2028-08-10,High_Monsoon,160,20,Desirable,Room Temperature,0,22.7,87.5,11.2,128.8,12.5,8.235,22400,3,15,96,2
+MED130,Salicylic Acid Ointment 6% 30g,Dermatological & Topicals,3,4.3,4,30,2027-04-18,High_Winter,60,30,Desirable,Room Temperature,1,6.9,0.7,17.2,-14.2,0.174,0.1,180,5,23,256,7
+MED131,Moisturizing Cream Liquid Paraffin,Dermatological & Topicals,638,18.0,14,318,2028-09-09,High_Winter,170,50,Desirable,Room Temperature,0,23.7,35.44,252.0,386.0,2.532,2.006,108460,34,286,311,32
+MED132,Adapalene Gel 0.1% 15g,Dermatological & Topicals,17,3.4,5,19,2028-11-08,High_Summer,195,100,Desirable,Room Temperature,0,25.7,5.0,17.0,0.0,1.0,0.895,3315,4,21,127,-2
+MED133,Vitamin C 500mg Chewable (Limcee),Vitamins & Mineral Supplements,98,4.1,7,35,2027-05-18,High_Winter,25,50,Essential,Room Temperature,0,7.9,23.9,28.7,69.3,3.415,2.8,2450,6,35,387,0
+MED134,Vitamin D3 60K IU Capsule,Vitamins & Mineral Supplements,16,2.4,7,24,2029-02-06,High_Winter,110,20,Vital,Room Temperature,1,28.6,6.67,16.8,-0.8,0.952,0.667,1760,4,21,142,3
+MED135,Calcium Carbonate + Vit D3 (Shelcal 500),Vitamins & Mineral Supplements,44,7.2,2,20,2027-07-17,Stable_All_Season,95,20,Vital,Room Temperature,0,9.9,6.11,14.4,29.6,3.056,2.2,4180,6,21,263,-1
+MED136,B-Complex with B12 (Becosules),Vitamins & Mineral Supplements,9,9.7,3,46,2028-04-12,Stable_All_Season,45,10,Vital,Room Temperature,1,18.8,0.93,29.1,-20.1,0.309,0.196,405,9,39,444,7
+MED137,Ferrous Ascorbate + Folic Acid,Vitamins & Mineral Supplements,368,8.8,5,65,2026-12-19,Stable_All_Season,120,50,Vital,Room Temperature,0,3.0,41.82,44.0,324.0,8.364,5.662,44160,10,54,259,11
+MED138,Zinc Sulphate 50mg,Vitamins & Mineral Supplements,70,5.3,4,26,2027-12-14,High_Winter,35,20,Essential,Room Temperature,0,14.8,13.21,21.2,48.8,3.302,2.692,2450,6,28,372,-2
+MED139,Folic Acid 5mg,Vitamins & Mineral Supplements,23,5.8,4,40,2027-10-15,Stable_All_Season,20,10,Vital,Room Temperature,1,12.8,3.97,23.2,-0.2,0.991,0.575,460,6,30,515,10
+MED140,Multivitamin & Minerals (Supradyn),Vitamins & Mineral Supplements,34,4.7,6,46,2027-01-18,High_Winter,55,20,Essential,Room Temperature,0,3.9,7.23,28.2,5.8,1.206,0.739,1870,6,35,280,11
+MED141,Coenzyme Q10 100mg,Vitamins & Mineral Supplements,31,5.2,6,46,2027-05-18,Stable_All_Season,380,30,Desirable,Room Temperature,0,7.9,5.96,31.2,-0.2,0.994,0.674,11780,7,39,112,7
+MED142,Methylcobalamin 1500mcg,Vitamins & Mineral Supplements,11,5.5,6,45,2027-04-18,Stable_All_Season,135,10,Vital,Room Temperature,1,6.9,2.0,33.0,-22.0,0.333,0.244,1485,7,40,193,5
+MED143,Alpha Lipoic Acid + B-Complex,Vitamins & Mineral Supplements,1,3.9,7,31,2026-12-19,Stable_All_Season,165,20,Desirable,Room Temperature,1,3.0,0.26,27.3,-26.3,0.037,0.032,165,6,34,147,-3
+MED144,Vitamin E 400IU (Evion),Vitamins & Mineral Supplements,73,5.8,14,128,2029-02-06,High_Winter,38,20,Essential,Room Temperature,1,28.6,12.59,81.2,-8.2,0.899,0.57,2774,11,93,374,35
+MED145,Iron Hydroxide Polymaltose Syrup,Vitamins & Mineral Supplements,216,4.8,7,47,2029-04-07,Stable_All_Season,140,20,Essential,Room Temperature,0,30.6,45.0,33.6,182.4,6.429,4.596,30240,7,41,177,6
+MED146,Biotin 10mg Capsule,Vitamins & Mineral Supplements,33,1.4,7,16,2027-01-18,Stable_All_Season,175,10,Desirable,Room Temperature,0,3.9,23.57,9.8,23.2,3.367,2.062,5775,2,12,86,4
+MED147,Omega-3 Fatty Acids 1000mg,Vitamins & Mineral Supplements,56,4.5,5,35,2028-12-08,Stable_All_Season,290,20,Desirable,Room Temperature,0,26.6,12.44,22.5,33.5,2.489,1.6,16240,5,28,119,7
+MED148,Calcium Citrate Malate + Vit D3,Vitamins & Mineral Supplements,42,2.5,5,14,2027-11-14,Stable_All_Season,150,30,Essential,Room Temperature,0,13.8,16.8,12.5,29.5,3.36,3.0,6300,3,16,124,-2
+MED149,Magnesium Glycinate 400mg,Vitamins & Mineral Supplements,34,4.0,4,23,2027-06-17,Stable_All_Season,220,20,Desirable,Room Temperature,0,8.9,8.5,16.0,18.0,2.125,1.478,7480,4,20,129,3
+MED150,Vitamin K2-7 + Calcium,Vitamins & Mineral Supplements,63,3.8,6,25,2029-05-07,Stable_All_Season,210,20,Desirable,Room Temperature,0,31.6,16.58,22.8,40.2,2.763,2.52,13230,5,28,129,-3
+MED151,Alprazolam 0.25mg,Neuropsychiatric & Sedatives,8,3.6,3,16,2027-12-14,Stable_All_Season,25,20,Vital,Room Temperature,1,14.8,2.22,10.8,-2.8,0.741,0.5,200,4,15,363,1
+MED152,Alprazolam 0.5mg,Neuropsychiatric & Sedatives,59,3.8,4,27,2027-10-15,Stable_All_Season,38,30,Vital,Room Temperature,0,12.8,15.53,15.2,43.8,3.882,2.185,2242,4,20,303,7
+MED153,Clonazepam 0.5mg,Neuropsychiatric & Sedatives,73,6.1,3,21,2028-02-12,Stable_All_Season,45,20,Vital,Room Temperature,0,16.8,11.97,18.3,54.7,3.989,3.476,3285,6,25,352,-4
+MED154,Escitalopram 10mg,Neuropsychiatric & Sedatives,5,6.9,6,73,2026-12-19,High_Winter,95,10,Vital,Room Temperature,1,3.0,0.72,41.4,-36.4,0.121,0.068,475,9,51,258,22
+MED155,Sertraline 50mg,Neuropsychiatric & Sedatives,53,2.7,5,22,2028-10-09,High_Winter,115,10,Vital,Room Temperature,0,24.7,19.63,13.5,39.5,3.926,2.409,6095,3,17,147,5
+MED156,Fluoxetine 20mg,Neuropsychiatric & Sedatives,105,4.3,6,40,2027-08-16,Stable_All_Season,60,30,Essential,Room Temperature,0,10.9,24.42,25.8,79.2,4.07,2.625,6300,6,32,256,8
+MED157,Pregabalin 75mg,Neuropsychiatric & Sedatives,108,10.7,4,67,2027-05-18,High_Winter,130,20,Vital,Room Temperature,0,7.9,10.09,42.8,65.2,2.523,1.612,14040,11,54,275,13
+MED158,Gabapentin 300mg,Neuropsychiatric & Sedatives,15,7.2,4,41,2027-11-14,High_Winter,145,30,Essential,Room Temperature,1,13.8,2.08,28.8,-13.8,0.521,0.366,2175,8,37,213,4
+MED159,Amitriptyline 10mg,Neuropsychiatric & Sedatives,1,4.2,5,26,2028-10-09,Stable_All_Season,32,30,Essential,Room Temperature,1,24.7,0.24,21.0,-20.0,0.048,0.038,32,5,26,347,0
+MED160,Duloxetine 30mg,Neuropsychiatric & Sedatives,92,6.7,7,62,2029-02-06,High_Winter,140,20,Essential,Room Temperature,0,28.6,13.73,46.9,45.1,1.962,1.484,12880,9,56,209,6
+MED161,Sodium Valproate 500mg CR,Neuropsychiatric & Sedatives,63,4.0,6,29,2029-01-07,Stable_All_Season,110,100,Vital,Room Temperature,0,27.6,15.75,24.0,39.0,2.625,2.172,6930,5,29,183,0
+MED162,Levetiracetam 500mg,Neuropsychiatric & Sedatives,35,2.1,6,18,2028-06-11,Stable_All_Season,175,20,Vital,Room Temperature,0,20.7,16.67,12.6,22.4,2.778,1.944,6125,3,16,105,2
+MED163,Zolpidem 10mg,Neuropsychiatric & Sedatives,55,9.7,5,63,2028-09-09,Stable_All_Season,75,20,Essential,Room Temperature,0,23.7,5.67,48.5,6.5,1.134,0.873,4125,11,60,344,3
+MED164,Olanzapine 5mg,Neuropsychiatric & Sedatives,258,5.0,8,51,2027-03-19,Stable_All_Season,65,30,Essential,Room Temperature,0,5.9,51.6,40.0,218.0,6.45,5.059,16770,7,47,265,4
+MED165,Quetiapine 50mg,Neuropsychiatric & Sedatives,84,6.0,4,34,2029-04-07,Stable_All_Season,85,10,Essential,Room Temperature,0,30.6,14.0,24.0,60.0,3.5,2.471,7140,6,30,254,4
+MED166,Baclofen 10mg,Neuropsychiatric & Sedatives,51,1.3,4,7,2027-01-18,Stable_All_Season,70,100,Desirable,Room Temperature,0,3.9,39.23,5.2,45.8,9.808,7.286,3570,2,8,131,-1
+MED167,Citicoline 500mg,Neuropsychiatric & Sedatives,26,3.8,6,29,2028-01-13,Stable_All_Season,320,10,Desirable,Room Temperature,0,15.8,6.84,22.8,3.2,1.14,0.897,8320,5,28,105,1
+MED168,Piracetam 800mg,Neuropsychiatric & Sedatives,69,6.4,4,36,2027-11-14,Stable_All_Season,140,20,Desirable,Room Temperature,0,13.8,10.78,25.6,43.4,2.695,1.917,9660,7,33,205,3
+MED169,Ciprofloxacin Eye Drops 0.3%,Ophthalmic & ENT,266,11.5,4,76,2028-11-08,High_Monsoon,35,30,Vital,Room Temperature,0,25.7,23.13,46.0,220.0,5.783,3.5,9310,12,58,548,18
+MED170,Moxifloxacin Eye Drops 0.5%,Ophthalmic & ENT,2,1.8,2,5,2029-04-07,High_Monsoon,110,50,Vital,Room Temperature,1,30.6,1.11,3.6,-1.6,0.556,0.4,220,2,6,123,-1
+MED171,Carboxymethylcellulose 0.5% (Tears),Ophthalmic & ENT,280,13.5,6,128,2028-12-08,High_Summer,125,10,Essential,Room Temperature,0,26.6,20.74,81.0,199.0,3.457,2.187,35000,17,98,314,30
+MED172,Tobramycin Eye Drops 0.3%,Ophthalmic & ENT,87,8.2,5,60,2029-05-07,High_Monsoon,85,10,Essential,Room Temperature,0,31.6,10.61,41.0,46.0,2.122,1.45,7395,10,51,297,9
+MED173,Olopatadine 0.1% Eye Drops,Ophthalmic & ENT,1,3.5,4,22,2029-01-07,High_Summer,145,50,Essential,Room Temperature,1,27.6,0.29,14.0,-13.0,0.071,0.045,145,4,18,149,4
+MED174,Chloramphenicol Ear Drops 5%,Ophthalmic & ENT,359,14.9,8,195,2028-12-08,High_Monsoon,42,10,Essential,Room Temperature,0,26.6,24.09,119.2,239.8,3.012,1.841,15078,21,141,569,54
+MED175,Waxsol Ear Drops 10ml,Ophthalmic & ENT,123,8.5,4,52,2026-12-19,High_Winter,65,20,Desirable,Room Temperature,0,3.0,14.47,34.0,89.0,3.618,2.365,7995,9,43,346,9
+MED176,Xylometazoline Nasal Drops 0.1% (Otrivin),Ophthalmic & ENT,53,14.2,3,50,2027-05-18,High_Winter,68,30,Vital,Room Temperature,0,7.9,3.73,42.6,10.4,1.244,1.06,3604,13,56,437,-6
+MED177,Fluticasone Nasal Spray 50mcg,Ophthalmic & ENT,67,7.4,4,50,2028-09-09,High_Winter,340,10,Vital,Room Temperature,0,23.7,9.05,29.6,37.4,2.264,1.34,22780,8,38,141,12
+MED178,Bimatoprost Eye Drops 0.03%,Ophthalmic & ENT,102,7.9,5,63,2028-12-08,Stable_All_Season,480,20,Desirable,Room Temperature,0,26.6,12.91,39.5,62.5,2.582,1.619,48960,9,49,123,14
+MED179,Timolol Eye Drops 0.5%,Ophthalmic & ENT,111,5.7,5,41,2029-01-07,Stable_All_Season,60,20,Vital,Room Temperature,0,27.6,19.47,28.5,82.5,3.895,2.707,6660,7,36,295,5
+MED180,Prednisolone Acetate Eye Drops 1%,Ophthalmic & ENT,53,3.3,4,17,2027-10-15,Stable_All_Season,75,20,Vital,Room Temperature,0,12.8,16.06,13.2,39.8,4.015,3.118,3975,4,18,201,-1
+MED181,Ketorolac Eye Drops 0.5%,Ophthalmic & ENT,62,4.4,4,31,2027-01-18,High_Summer,65,20,Essential,Cold Chain (2-8C),0,3.9,14.09,17.6,44.4,3.523,2.0,4030,5,23,249,8
+MED182,Sodium Hyaluronate 0.1% Eye Drops,Ophthalmic & ENT,197,6.6,8,78,2027-03-19,High_Summer,210,20,Desirable,Room Temperature,0,5.9,29.85,52.8,144.2,3.731,2.526,41370,10,63,170,15

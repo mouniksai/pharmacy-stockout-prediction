@@ -1,0 +1,7 @@
+Model,CV_ROC_AUC,Train_Accuracy,Test_Accuracy,Precision,Recall,F1_Score,Test_ROC_AUC
+Logistic Regression,0.9868,0.9853,0.9565,0.8667,1.0,0.9286,0.9977
+Decision Tree (CART),0.9626,0.9926,1.0,1.0,1.0,1.0,1.0
+Random Forest,1.0,1.0,0.9783,1.0,0.9231,0.96,1.0
+k-Nearest Neighbors (k-NN),0.946,1.0,0.7826,0.6364,0.5385,0.5833,0.9114
+Gaussian Naive Bayes,0.9531,0.9559,0.9348,0.8571,0.9231,0.8889,0.986
+Gradient Boosting,0.9632,1.0,0.9783,0.9286,1.0,0.963,1.0
