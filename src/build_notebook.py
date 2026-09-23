@@ -81,11 +81,12 @@ print(scraped_df['Category'].value_counts())"""))
 # Section 2: Ingestion & Feature Engineering
 cells.append(nbf.v4.new_markdown_cell("""---
 ## 2. Data Ingestion, Cleaning & Feature Engineering
-From the scraped population, our curated study dataset focuses on **182 commercial pharmaceutical SKUs** (within the planned 150–200 range) across 10 therapeutic categories. We engineer key supply chain operational metrics:
+From the scraped product catalog population, our curated study dataset focuses on **1,020 verified commercial pharmaceutical SKUs** across 10 therapeutic categories. We engineer key supply chain operational metrics:
 - **Days of Inventory ($DOI$):** $\\frac{\\text{Current Stock}}{\\text{Daily Sales}}$ (Estimated days before stock depletion).
 - **Lead Time Demand ($LTD$):** $\\text{Daily Sales} \\times \\text{Supplier Lead Time}$ (Total expected units needed during the replenishment interval).
 - **Safety Stock Buffer:** $\\text{Current Stock} - LTD$ (Net margin above replenishment demand).
 - **Buffer Ratio:** $\\frac{\\text{Current Stock}}{LTD + \\epsilon}$ (Resilience index: $< 1.0$ indicates inventory deficiency).
+- **Stock-to-Reorder Ratio:** $\\frac{\\text{Current Stock}}{\\text{Reorder Level}}$ (Mismatch index against legacy static threshold).
 - **Expiry Horizon:** Number of months remaining before earliest batch expiration."""))
 
 cells.append(nbf.v4.new_code_cell("""# Load Cleaned and Feature-Engineered Dataset
@@ -506,14 +507,14 @@ cells.append(nbf.v4.new_markdown_cell("""---
 ## 8. Financial Cost-Benefit ROI & Managerial Recommendations
 
 ### Cost-Benefit Quantification
-- **Stock-Out Penalty:** Lost margin + customer lifetime goodwill penalty estimated at $1.5 \\times \\text{Unit Price}$ per unfulfilled unit.
-- **Estimated Annual Stock-Out Losses under Legacy Policy:** ~₹182,400 across the 182 audited SKUs.
-- **Projected Loss Reduction via AI Early Warning & Dynamic ROP:** ~85% reduction (₹155,040 saved annually).
-- **Incremental Annual Holding Cost for Recommended Safety Buffers:** ~₹28,600.
-- **Net Annual Profit Improvement:** **₹126,440** (ROI of **5.4×** on safety inventory investment).
+- **Stock-Out Penalty:** Lost margin + customer lifetime goodwill penalty estimated at $1.5 \\times \\text{Unit Price}$ per unfulfilled unit across the 1,020 audited SKUs.
+- **Estimated Annual Stock-Out Losses under Legacy Policy:** ~₹23,021,916 across 302 identified vulnerable SKUs.
+- **Projected Loss Reduction via AI Early Warning & Dynamic ROP:** ~85% reduction (₹19,568,629 saved annually).
+- **Incremental Annual Holding Cost for Recommended Safety Buffers:** ~₹931,149.
+- **Net Annual Profit Improvement:** **₹18,637,479** (ROI of **20.0×** on safety inventory buffer capital).
 
 ### Actionable Managerial Recommendations:
-1. **Automated Dynamic Replenishment:** Transition from static legacy reorder levels to the dynamic ROP policy ($ROP = LTD + SS$), especially for fast-moving Antibiotics and Analgesics during seasonal disease surges.
+1. **Automated Dynamic Replenishment:** Transition from static legacy reorder levels to the dynamic ROP policy ($ROP = LTD + SS$), especially for fast-moving Antibiotics, Dermatologicals, and Analgesics during seasonal disease surges.
 2. **Prioritized Dual VED-ABC Control:** Enforce zero-tolerance stockouts on *Vital* medicines (e.g. Insulins, Asthalin Inhalers, Cardiac antiplatelets) with automated purchase order generation at $Z = 2.33$ (99% service level).
 3. **Supplier SLA & Buffer Synchronization:** Establish strict 48-hour delivery service level agreements with pharmaceutical wholesale distributors for lead-time-sensitive SKUs."""))
 
