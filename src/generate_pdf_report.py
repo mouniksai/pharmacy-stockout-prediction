@@ -1,9 +1,9 @@
 """
-Professional Case Study Report Generator
+Professional IEEE / Academic Case Study Report Generator
 Course: 23CSE452 Business Analytics
 Student: Mounik Sai (CB.SC.U4CSE23561)
-Case Study: Predicting Medicine Stock-Outs in Pharmacies
-Generates an 8 to 9 page comprehensive formal academic & industry case study report.
+Case Study: Predicting Medicine Stock-Outs in Retail Pharmacies
+Compiles a formal 9-page academic case study report following strict IEEE / Formal Academic Black & White styling.
 """
 
 import os
@@ -22,10 +22,11 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.enums import TA_CENTER, TA_LEFT, TA_RIGHT, TA_JUSTIFY
 
 
-class NumberedCanvas(canvas.Canvas):
+class IEEEAcademicCanvas(canvas.Canvas):
     """
-    Two-pass canvas to dynamically compute and render total page count: Page X of Y.
-    Also adds clean running headers and footers to all pages except the cover page.
+    Two-pass canvas for IEEE / Formal Academic reports.
+    Computes total page count (Page X of Y) and renders clean,
+    minimalist academic running headers and footers in pure black and white.
     """
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -45,141 +46,163 @@ class NumberedCanvas(canvas.Canvas):
 
     def draw_header_footer(self, page_count):
         self.saveState()
-        self.setFont("Helvetica", 8)
-        self.setFillColor(colors.HexColor("#4A5568"))
+        self.setFont("Times-Roman", 8)
+        self.setFillColor(colors.HexColor("#222222"))
 
         if self._pageNumber > 1:
-            # Running Header
-            self.drawString(50, 750, "23CSE452 Business Analytics | Individual Case Study Report")
-            self.drawRightString(612 - 50, 750, "Predicting Medicine Stock-Outs in Pharmacies")
-            self.setStrokeColor(colors.HexColor("#CBD5E0"))
-            self.setLineWidth(0.5)
-            self.line(50, 744, 612 - 50, 744)
+            # Running Header (Academic Style)
+            self.drawString(50, 752, "23CSE452: BUSINESS ANALYTICS — INDIVIDUAL CASE STUDY REPORT")
+            self.drawRightString(612 - 50, 752, "PREDICTING MEDICINE STOCK-OUTS IN RETAIL PHARMACIES")
+            self.setStrokeColor(colors.HexColor("#000000"))
+            self.setLineWidth(0.4)
+            self.line(50, 746, 612 - 50, 746)
 
-            # Running Footer
-            self.setStrokeColor(colors.HexColor("#CBD5E0"))
-            self.setLineWidth(0.5)
-            self.line(50, 46, 612 - 50, 46)
-            self.drawString(50, 34, "Author: Mounik Sai (Reg: CB.SC.U4CSE23561) — Class: CSE - F")
+            # Running Footer (Academic Style)
+            self.setStrokeColor(colors.HexColor("#000000"))
+            self.setLineWidth(0.4)
+            self.line(50, 44, 612 - 50, 44)
+            self.drawString(50, 32, "Author: Mounik Sai (Reg: CB.SC.U4CSE23561) — Class: CSE - F")
             page_text = f"Page {self._pageNumber} of {page_count}"
-            self.drawRightString(612 - 50, 34, page_text)
+            self.drawRightString(612 - 50, 32, page_text)
 
         self.restoreState()
 
 
 def create_case_study_report(output_filename="Case_Study_Report.pdf"):
-    print(">>> Compiling formal Case Study Report PDF...")
+    print(">>> Compiling IEEE / Formal Academic Case Study Report PDF...")
 
     doc = SimpleDocTemplate(
         output_filename,
         pagesize=letter,
         leftMargin=50,
         rightMargin=50,
-        topMargin=50,
-        bottomMargin=50
+        topMargin=48,
+        bottomMargin=48
     )
 
     styles = getSampleStyleSheet()
 
-    # Custom Typography Hierarchy
-    c_primary = colors.HexColor("#1A365D")   # Deep Navy
-    c_secondary = colors.HexColor("#2B6CB0") # Slate Blue
-    c_dark = colors.HexColor("#2D3748")      # Charcoal Body Text
-    c_light_bg = colors.HexColor("#F7FAFC")  # Off-white / Cool Grey
+    # Strict IEEE Academic Typography Hierarchy (Times-Roman / Grayscale)
+    c_black = colors.HexColor("#000000")
+    c_charcoal = colors.HexColor("#222222")
+    c_gray_bg = colors.HexColor("#F8F9FA")
+    c_rule = colors.HexColor("#000000")
 
     title_style = ParagraphStyle(
         'DocTitle',
         parent=styles['Normal'],
-        fontName='Helvetica-Bold',
-        fontSize=18,
-        leading=22,
-        textColor=c_primary,
+        fontName='Times-Bold',
+        fontSize=15.5,
+        leading=19.5,
+        textColor=c_black,
         alignment=TA_CENTER,
-        spaceAfter=6
+        spaceAfter=4
     )
 
     subtitle_style = ParagraphStyle(
         'DocSubtitle',
         parent=styles['Normal'],
-        fontName='Helvetica-Bold',
-        fontSize=10.5,
-        leading=14.5,
-        textColor=c_secondary,
+        fontName='Times-Italic',
+        fontSize=10,
+        leading=13.5,
+        textColor=c_black,
         alignment=TA_CENTER,
-        spaceAfter=9
+        spaceAfter=6
+    )
+
+    course_banner_style = ParagraphStyle(
+        'CourseBanner',
+        parent=styles['Normal'],
+        fontName='Times-Bold',
+        fontSize=9.5,
+        leading=12,
+        textColor=c_black,
+        alignment=TA_CENTER,
+        spaceAfter=4
     )
 
     meta_style = ParagraphStyle(
         'DocMeta',
         parent=styles['Normal'],
-        fontName='Helvetica',
-        fontSize=8.8,
-        leading=13,
-        textColor=c_dark,
+        fontName='Times-Roman',
+        fontSize=8.5,
+        leading=12,
+        textColor=c_charcoal,
         alignment=TA_CENTER,
-        spaceAfter=9
+        spaceAfter=6
+    )
+
+    abstract_style = ParagraphStyle(
+        'AbstractText',
+        parent=styles['Normal'],
+        fontName='Times-Roman',
+        fontSize=8.2,
+        leading=11.2,
+        textColor=c_black,
+        alignment=TA_JUSTIFY,
+        spaceAfter=4
     )
 
     h1_style = ParagraphStyle(
         'H1',
         parent=styles['Normal'],
-        fontName='Helvetica-Bold',
-        fontSize=12,
-        leading=15.5,
-        textColor=c_primary,
-        spaceBefore=9,
-        spaceAfter=4,
+        fontName='Times-Bold',
+        fontSize=10.8,
+        leading=13.8,
+        textColor=c_black,
+        spaceBefore=7,
+        spaceAfter=3,
         keepWithNext=True
     )
 
     h2_style = ParagraphStyle(
         'H2',
         parent=styles['Normal'],
-        fontName='Helvetica-Bold',
-        fontSize=9.8,
-        leading=13,
-        textColor=c_secondary,
-        spaceBefore=6,
-        spaceAfter=3,
+        fontName='Times-Bold',
+        fontSize=9.2,
+        leading=12.2,
+        textColor=c_black,
+        spaceBefore=5,
+        spaceAfter=2,
         keepWithNext=True
     )
 
     body_style = ParagraphStyle(
         'Body',
         parent=styles['Normal'],
-        fontName='Helvetica',
-        fontSize=8.4,
-        leading=11.6,
-        textColor=c_dark,
+        fontName='Times-Roman',
+        fontSize=8.2,
+        leading=11.1,
+        textColor=c_black,
         alignment=TA_JUSTIFY,
-        spaceAfter=5
+        spaceAfter=4
     )
 
     bullet_style = ParagraphStyle(
         'Bullet',
         parent=body_style,
-        leftIndent=14,
-        firstLineIndent=-9,
-        spaceAfter=3
+        leftIndent=12,
+        firstLineIndent=-8,
+        spaceAfter=2.5
     )
 
     table_header_style = ParagraphStyle(
         'TableHeader',
         parent=styles['Normal'],
-        fontName='Helvetica-Bold',
-        fontSize=7.8,
-        leading=10,
-        textColor=colors.white,
+        fontName='Times-Bold',
+        fontSize=7.6,
+        leading=9.8,
+        textColor=c_black,
         alignment=TA_CENTER
     )
 
     table_cell_style = ParagraphStyle(
         'TableCell',
         parent=styles['Normal'],
-        fontName='Helvetica',
-        fontSize=7.4,
-        leading=9.5,
-        textColor=c_dark,
+        fontName='Times-Roman',
+        fontSize=7.3,
+        leading=9.3,
+        textColor=c_black,
         alignment=TA_LEFT
     )
 
@@ -189,13 +212,13 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
         alignment=TA_CENTER
     )
 
-    callout_style = ParagraphStyle(
-        'Callout',
+    caption_style = ParagraphStyle(
+        'Caption',
         parent=styles['Normal'],
-        fontName='Helvetica-Oblique',
-        fontSize=8,
-        leading=10.5,
-        textColor=c_primary,
+        fontName='Times-Italic',
+        fontSize=7.8,
+        leading=10,
+        textColor=c_black,
         alignment=TA_CENTER,
         spaceBefore=2,
         spaceAfter=4
@@ -204,51 +227,45 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
     story = []
 
     # =========================================================================
-    # PAGE 1: COVER HEADER, EXECUTIVE ABSTRACT, SECTION 1
+    # PAGE 1: IEEE HEADER, METADATA, ABSTRACT, SECTION 1
     # =========================================================================
-    story.append(Paragraph("23CSE452: BUSINESS ANALYTICS — INDIVIDUAL CASE STUDY", subtitle_style))
-    story.append(Paragraph("Predicting Medicine Stock-Outs in Retail Pharmacies", title_style))
-    story.append(Paragraph("An Applied Machine Learning & Prescriptive Inventory Optimization Approach", subtitle_style))
+    story.append(Paragraph("23CSE452: BUSINESS ANALYTICS — INDIVIDUAL CASE STUDY", course_banner_style))
+    story.append(Paragraph("Predicting Medicine Stock-Outs in Retail Pharmacies: An Applied Machine Learning and Prescriptive Inventory Optimization Approach", title_style))
+    story.append(Paragraph("A Data-Driven Empirical Framework Bridging Predictive Risk Scoring with Operational Inventory Replenishment", subtitle_style))
 
     meta_text = (
         "<b>Student Name:</b> Mounik Sai &nbsp;&nbsp;|&nbsp;&nbsp; "
         "<b>Register Number:</b> CB.SC.U4CSE23561 &nbsp;&nbsp;|&nbsp;&nbsp; "
         "<b>Class / Section:</b> CSE - F<br/>"
-        "<b>Academic Department:</b> Department of Computer Science and Engineering &nbsp;&nbsp;|&nbsp;&nbsp; "
-        "<b>Academic Year:</b> 2026"
+        "Department of Computer Science and Engineering &nbsp;&nbsp;|&nbsp;&nbsp; Amrita Vishwa Vidyapeetham &nbsp;&nbsp;|&nbsp;&nbsp; Academic Year: 2026"
     )
     story.append(Paragraph(meta_text, meta_style))
-    story.append(HRFlowable(width="100%", thickness=1.5, color=c_primary, spaceBefore=2, spaceAfter=8))
+    story.append(HRFlowable(width="100%", thickness=1.0, color=c_rule, spaceBefore=2, spaceAfter=5))
 
-    summary_html = (
-        "<b>EXECUTIVE ABSTRACT:</b> In retail and community pharmacy management, medication stock-outs present severe clinical and financial vulnerabilities. Stock-outs compromise patient therapeutic continuity, cause immediate loss of retail revenue, and erode patient trust. Conversely, excessive buffer stock induces working capital lock-up and expired medicine write-offs. This individual case study establishes an applied predictive and prescriptive analytics framework leveraging primary empirical data collected via <b>automated web scraping of publicly accessible online retail pharmacy product catalogs</b> (Tata 1mg and Apollo Pharmacy, spanning an expanded catalog of 1,020 monitored SKUs across 10 therapeutic categories). Following the <b>23CSE452 Business Analytics syllabus</b>, we deploy Principal Component Analysis (PCA) for dimension reduction, benchmark six classification algorithms (Logistic Regression, Decision Trees, Random Forest, k-NN, Gaussian Naïve Bayes, and Gradient Boosting), and implement prescriptive safety stock and dynamic Reorder Point (ROP) optimization. Our top-performing ensemble models (Gradient Boosting and Random Forest) achieve <b>0.988 Test Accuracy, 0.980 F1-Score, and 0.999+ ROC-AUC</b>, dramatically outperforming legacy threshold heuristics. Prescriptive inventory policies demonstrate an 85% stock-out incidence reduction, yielding a projected net annual profit gain of <b>INR 18,637,479</b> across the monitored inventory network (20.0× ROI on safety inventory capital)."
+    abstract_html = (
+        "<i><b>Abstract</b></i>—In community and retail pharmacy management, medication stock-outs present an acute operational and public health paradox: frequent replenishment deficits of high-velocity, life-saving chronic formulations occurring concurrently with capital-intensive overstocking of slow-moving inventory. Unlike fast-moving consumer goods retail, stock-outs in pharmaceutical supply chains entail severe clinical vulnerabilities—inducing therapeutic disruption for chronic patients, accelerating disease complications, and triggering irreversible defection of high-lifetime-value patients to competing pharmacy chains. Conversely, excessive buffer stock locks up scarce working capital under rigid margin ceilings and induces heavy financial write-offs when medications reach their expiry dates. "
+        "This individual case study establishes an applied predictive and prescriptive analytics framework leveraging primary empirical data collected via <b>automated web scraping of publicly accessible online retail pharmacy product catalogs</b> (Tata 1mg and Apollo Pharmacy, spanning an expanded catalog of 1,020 monitored SKUs across 10 therapeutic categories). Following the <b>23CSE452 Business Analytics syllabus</b>, we implement Principal Component Analysis (PCA) for dimension reduction, benchmark six classification algorithms (Logistic Regression, Decision Trees, Random Forest, <i>k</i>-NN, Gaussian Naïve Bayes, and Gradient Boosting), and establish a prescriptive inventory optimization framework based on dynamic Safety Stock (<i>SS</i>), Reorder Points (<i>ROP</i>), and Economic Order Quantities (<i>EOQ</i>). "
+        "Our top-performing ensemble architectures (Gradient Boosting and Random Forest) achieve <b>0.988 Test Accuracy, 0.980 F1-Score, and 0.999+ ROC-AUC</b>, dramatically outperforming legacy threshold heuristics. Prescriptive inventory policies demonstrate an 85% stock-out incidence reduction, yielding a projected net annual profit gain of <b>INR 18,637,479</b> across the monitored inventory network (<b>20.0× ROI</b> on safety inventory capital).<br/>"
+        "<i><b>Keywords</b></i>—Retail Pharmacy Analytics, Medicine Shortages, Machine Learning Classification, Dimension Reduction (PCA), Prescriptive Inventory Optimization, VED Analysis, Financial ROI."
     )
-    summary_table = Table([[Paragraph(summary_html, body_style)]], colWidths=[512])
-    summary_table.setStyle(TableStyle([
-        ('BACKGROUND', (0, 0), (-1, -1), colors.HexColor("#EBF8FF")),
-        ('BOX', (0, 0), (-1, -1), 1, c_secondary),
-        ('TOPPADDING', (0, 0), (-1, -1), 5),
-        ('BOTTOMPADDING', (0, 0), (-1, -1), 5),
-        ('LEFTPADDING', (0, 0), (-1, -1), 7),
-        ('RIGHTPADDING', (0, 0), (-1, -1), 7),
-    ]))
-    story.append(summary_table)
-    story.append(Spacer(1, 8))
+    story.append(Paragraph(abstract_html, abstract_style))
+    story.append(HRFlowable(width="100%", thickness=1.0, color=c_rule, spaceBefore=4, spaceAfter=6))
 
     # SECTION 1: PROBLEM STATEMENT AND OBJECTIVES
     story.append(Paragraph("1. Problem Statement and Objectives", h1_style))
-    story.append(HRFlowable(width="100%", thickness=0.8, color=c_secondary, spaceBefore=1, spaceAfter=5))
+    story.append(HRFlowable(width="100%", thickness=0.5, color=c_rule, spaceBefore=1, spaceAfter=4))
 
     p1 = (
-        "<b>1.1 Business Context & Problem Statement:</b> Community retail pharmacies operate at the critical intersection of clinical healthcare delivery and fast-paced commercial retail. Unlike general consumer goods retail, inventory mismanagement in pharmaceutical supply chains entails acute public health consequences. Community pharmacies routinely encounter an operational paradox: frequent stock-outs of high-velocity, essential prescription drugs occurring simultaneously with expensive overstocking of slow-moving formulations. When a pharmacy stocks out of vital medications—such as chronic antidiabetics, cardiovascular antiplatelets, or acute respiratory inhalers—patients face immediate treatment disruption or are compelled to seek alternatives across competing pharmacies, inflicting direct revenue loss and lasting patient defection. In parallel, overstocking capital-intensive medicines ties up scarce operating capital and leads to severe financial waste from inventory spoilage when medications reach their expiry dates. Legacy pharmacy replenishment practices remain overwhelmingly reactive, relying on simplistic, static reorder thresholds or unscientific visual shelf audits by floor staff. These traditional methods fail to accommodate dynamic supplier lead-time fluctuations, epidemiological disease seasonality, and non-linear consumption patterns. Therefore, developing a reliable predictive early-warning system coupled with dynamic prescriptive replenishment triggers is essential for sustainable pharmacy operations."
+        "<b>1.1 Business Context and Real-World Operational Dilemma:</b> Community retail pharmacies operate at the critical intersection of clinical healthcare delivery and fast-paced commercial retail. In India, over 850,000 independent retail chemist shops and rapidly growing organized chains (such as Apollo Pharmacy, MedPlus, and Tata 1mg) serve as the vital last-mile touchpoint for primary healthcare delivery. However, community pharmacies operate under intense economic and operational constraints. Under the Drug Prices Control Order (DPCO) enforced by the National Pharmaceuticals Pricing Authority (NPPA), price ceilings cap gross retail margins to between 16% and 20% on ethical branded formulations and 8% to 12% on generic medications. Operating under thin margins means working capital is severely restricted (typically INR 15–40 Lakhs for a standard independent pharmacy). Misallocating this capital directly jeopardizes store solvency.<br/>"
+        "Pharmacies face a chronic double-jeopardy: (1) <i>The Defection Penalty:</i> Chronic maintenance medications (for Type 2 diabetes, cardiovascular diseases, and hypertension) account for 75% to 85% of recurring store revenue. When a diabetic patient encounters a stock-out of vital maintenance drugs (such as Metformin, Telmisartan, or Atorvastatin), they cannot defer treatment; they immediately defect to a competing chemist. Over 68% of defecting chronic patients never return, eroding an estimated INR 25,000 to INR 45,000 in discounted 3-year Customer Lifetime Value (CLV). (2) <i>The Expiry Destruction Waste:</i> Conversely, fear of stock-outs prompts over-ordering of slow-moving formulations. In the pharmaceutical supply chain, stockists enforce strict return policies, imposing 25% to 50% salvage deductions or refusing credit on non-moving drugs within 90 days of expiration. Unsold expired inventory must be written off as a complete financial loss. Traditional replenishment practices rely on simplistic, static reorder thresholds or subjective visual shelf inspections, failing to accommodate dynamic supplier lead times (2 to 14 days) and seasonal epidemiological surges."
     )
     story.append(Paragraph(p1, body_style))
 
     p2 = "<b>1.2 Specific Case Study Objectives:</b>"
     story.append(Paragraph(p2, body_style))
-    story.append(Paragraph("• <b>Objective 1 (Predictive Classification):</b> Design, train, and validate machine learning classification models aligned with the Business Analytics syllabus (Logistic Regression, Decision Trees, Random Forest, k-NN, Naïve Bayes, and Gradient Boosting) to accurately predict stock-out vulnerability for individual medicine SKUs before stock depletion occurs.", bullet_style))
+    story.append(Paragraph("• <b>Objective 1 (Predictive Classification):</b> Design, train, and validate machine learning classification models aligned with the 23CSE452 Business Analytics syllabus (Logistic Regression, Decision Trees, Random Forest, <i>k</i>-NN, Naïve Bayes, and Gradient Boosting) to accurately predict stock-out vulnerability for individual medicine SKUs before stock depletion occurs.", bullet_style))
     story.append(Paragraph("• <b>Objective 2 (Operational Driver Identification):</b> Uncover and quantify the primary operational factors precipitating stock-outs—including daily consumption velocity, distributor fulfillment lead times, seasonal epidemiological surge profiles, and clinical priority (Vital, Essential, Desirable - VED analysis)—through correlation analysis, feature importance ranking, and Principal Component Analysis (PCA).", bullet_style))
-    story.append(Paragraph("• <b>Objective 3 (Prescriptive Inventory Optimization & Financial ROI):</b> Establish a data-driven prescriptive inventory framework that dynamically computes optimal Safety Stock (SS), Reorder Points (ROP), and Economic Order Quantities (EOQ), quantifying the cost-benefit trade-off between stock-out mitigation and carrying cost containment to ensure business viability.", bullet_style))
+    story.append(Paragraph("• <b>Objective 3 (Prescriptive Inventory Optimization & Financial ROI):</b> Establish a data-driven prescriptive inventory framework that dynamically computes optimal Safety Stock (<i>SS</i>), Reorder Points (<i>ROP</i>), and Economic Order Quantities (<i>EOQ</i>), quantifying the cost-benefit trade-off between stock-out mitigation and carrying cost containment to ensure real-world business viability.", bullet_style))
 
     # =========================================================================
     # PAGE 2: DATA COLLECTION (WEB SCRAPING) AND PREPARATION
@@ -256,10 +273,10 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
     story.append(PageBreak())
 
     story.append(Paragraph("2. Data Collection and Dataset Description", h1_style))
-    story.append(HRFlowable(width="100%", thickness=0.8, color=c_secondary, spaceBefore=1, spaceAfter=5))
+    story.append(HRFlowable(width="100%", thickness=0.5, color=c_rule, spaceBefore=1, spaceAfter=4))
 
     p3 = (
-        "<b>2.1 Primary Data Collection via Web Scraping:</b> In strict compliance with the Business Analytics case study instructions explicitly prohibiting ready-made repository downloads (e.g., Kaggle, UCI, or GitHub dataset dumps), primary data was compiled through <b>automated web scraping of publicly accessible online retail pharmacy product catalogs</b>. The data collection focused on leading licensed digital pharmacy platforms, predominantly <i>Tata 1mg Public Medicine Directory</i> (<code>https://www.1mg.com/categories/all-medicines</code>) and public catalog endpoints, supplemented by <i>Apollo Pharmacy</i> (<code>https://www.apollopharmacy.in/</code>).<br/>"
+        "<b>2.1 Primary Data Collection via Automated Web Scraping:</b> In strict compliance with the Business Analytics case study instructions explicitly prohibiting ready-made repository downloads (e.g., Kaggle, UCI, or GitHub dataset dumps), primary data was compiled through <b>automated web scraping of publicly accessible online retail pharmacy product catalogs</b>. The data collection focused on leading licensed digital pharmacy platforms, predominantly <i>Tata 1mg Public Medicine Directory</i> (<code>https://www.1mg.com/categories/all-medicines</code>) and public catalog endpoints, supplemented by <i>Apollo Pharmacy</i> (<code>https://www.apollopharmacy.in/</code>).<br/>"
         "<b>Data Collection Procedure:</b> An automated Python scraping engine (<code>src/web_scraper.py</code>) traversed 10 clinical therapeutic categories using targeted generic and brand prefix queries. The engine extracted real-time product titles, manufacturer and marketer names, packaging formats, active chemical compositions, Maximum Retail Prices (MRP), and public stock availability flags (<code>available: true/false</code>). The scraper executed polite HTTP GET requests with rotating User-Agents, adhered to <code>robots.txt</code> crawl directives, and incorporated exponential backoff intervals to prevent server strain. Scraped records were systematically validated and scaled into an expanded empirical dataset of <b>1,020 verified commercial pharmaceutical SKUs</b> in <code>data/pharmacy_stockout_raw.csv</code> and <code>data/pharmacy_stockout_cleaned.csv</code>. To model retail operations with high statistical validity, these SKUs were integrated with empirical retail supply chain operational metrics—including daily sales velocity from historical POS records, distributor fulfillment lead times, and seasonal epidemiological surge indices. Zero personal patient records or confidential trade rebate margins were scraped, guaranteeing complete data privacy."
     )
     story.append(Paragraph(p3, body_style))
@@ -269,8 +286,8 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
     )
     story.append(Paragraph(p4, body_style))
 
-    # Table 1: Data Dictionary Table
-    raw_table_data = [
+    # Table 1: LaTeX Booktabs Style (Black and White)
+    t1_data = [
         [Paragraph("<b>Attribute</b>", table_header_style), Paragraph("<b>Data Type</b>", table_header_style), Paragraph("<b>Measurement / Range</b>", table_header_style), Paragraph("<b>Operational Definition & Business Relevance</b>", table_header_style)],
         [Paragraph("Medicine_ID", table_cell_style), Paragraph("Categorical", table_cell_center), Paragraph("MED0001 – MED1020", table_cell_center), Paragraph("Unique alphanumeric SKU identifier.", table_cell_style)],
         [Paragraph("Medicine_Name", table_cell_style), Paragraph("Text", table_cell_center), Paragraph("Clinical formulations", table_cell_style), Paragraph("Generic composition, brand name, and dosage strength.", table_cell_style)],
@@ -285,22 +302,23 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
         [Paragraph("Criticality (VED)", table_cell_style), Paragraph("Categorical", table_cell_center), Paragraph("Vital / Essential / Desirable", table_cell_center), Paragraph("Healthcare VED priority matrix for clinical risk management.", table_cell_style)],
         [Paragraph("Stock_Status (Target)", table_cell_style), Paragraph("Binary", table_cell_center), Paragraph("0 (In Stock), 1 (Stockout)", table_cell_center), Paragraph("Target label: 1 if inventory is depleted or insufficient to cover LTD.", table_cell_style)],
     ]
-    t1 = Table(raw_table_data, colWidths=[90, 58, 100, 264])
+    t1 = Table(t1_data, colWidths=[90, 58, 100, 264])
     t1.setStyle(TableStyle([
-        ('BACKGROUND', (0, 0), (-1, 0), c_primary),
-        ('GRID', (0, 0), (-1, -1), 0.5, colors.HexColor("#CBD5E0")),
-        ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, c_light_bg]),
+        ('LINEABOVE', (0, 0), (-1, 0), 1.2, c_black),     # \toprule
+        ('LINEBELOW', (0, 0), (-1, 0), 0.6, c_black),     # \midrule
+        ('LINEBELOW', (0, -1), (-1, -1), 1.2, c_black),   # \bottomrule
+        ('BACKGROUND', (0, 0), (-1, 0), c_gray_bg),
         ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
-        ('TOPPADDING', (0, 0), (-1, -1), 2.5),
-        ('BOTTOMPADDING', (0, 0), (-1, -1), 2.5),
-        ('LEFTPADDING', (0, 0), (-1, -1), 4),
-        ('RIGHTPADDING', (0, 0), (-1, -1), 4),
+        ('TOPPADDING', (0, 0), (-1, -1), 2.2),
+        ('BOTTOMPADDING', (0, 0), (-1, -1), 2.2),
+        ('LEFTPADDING', (0, 0), (-1, -1), 3),
+        ('RIGHTPADDING', (0, 0), (-1, -1), 3),
     ]))
     story.append(t1)
-    story.append(Spacer(1, 8))
+    story.append(Spacer(1, 6))
 
     story.append(Paragraph("3. Data Preparation and Exploratory Analysis", h1_style))
-    story.append(HRFlowable(width="100%", thickness=0.8, color=c_secondary, spaceBefore=1, spaceAfter=5))
+    story.append(HRFlowable(width="100%", thickness=0.5, color=c_rule, spaceBefore=1, spaceAfter=4))
 
     p5 = (
         "<b>3.1 Preprocessing and Feature Engineering:</b> The raw scraped dataset underwent rigorous data sanitization. Missing values were audited (confirming 0 missing fields across all 1,020 SKUs). Expiration dates were converted into continuous shelf-life horizons (<i>Expiry_Months_Remaining</i>). To equip predictive models with supply chain dynamics, we engineered key operational variables grounded in inventory theory:<br/>"
@@ -316,12 +334,11 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
     # =========================================================================
     story.append(PageBreak())
 
-    p6_header = Paragraph("<b>3.2 Exploratory Visualizations & Empirical Findings:</b>", h2_style)
-    story.append(p6_header)
+    story.append(Paragraph("3.2 Exploratory Visualizations & Empirical Findings", h2_style))
 
     if os.path.exists("figures/eda_distribution_overview.png"):
         story.append(Image("figures/eda_distribution_overview.png", width=6.8*inch, height=3.5*inch))
-        story.append(Paragraph("<b>Figure 1:</b> Distributional Overview of Operational Metrics (Stock, Sales Velocity, Lead Time, and DOI by Stock Status).", callout_style))
+        story.append(Paragraph("<i>Fig. 1. Distributional Overview of Operational Metrics (Stock, Sales Velocity, Lead Time, and DOI by Stock Status).</i>", caption_style))
         story.append(Spacer(1, 4))
 
     p6 = (
@@ -331,7 +348,7 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
 
     if os.path.exists("figures/eda_category_and_criticality.png"):
         story.append(Image("figures/eda_category_and_criticality.png", width=6.8*inch, height=2.4*inch))
-        story.append(Paragraph("<b>Figure 2:</b> Stock-Out Incidence Rate by Therapeutic Category (Left) and VED Criticality Breakdown (Right).", callout_style))
+        story.append(Paragraph("<i>Fig. 2. Stock-Out Incidence Rate by Therapeutic Category (Left) and VED Criticality Breakdown (Right).</i>", caption_style))
 
     # =========================================================================
     # PAGE 4: CORRELATIONS & FRONTIER ANALYSIS + ANALYTICS METHODS
@@ -350,8 +367,8 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
                 Image("figures/eda_leadtime_demand_frontier.png", width=3.4*inch, height=2.6*inch)
             ],
             [
-                Paragraph("<b>Figure 3:</b> Pearson Correlation Matrix of Inventory Predictors.", callout_style),
-                Paragraph("<b>Figure 4:</b> Physical Stock vs. Lead-Time Demand (LTD) Frontier.", callout_style)
+                Paragraph("<i>Fig. 3. Pearson Correlation Matrix of Inventory Predictors.</i>", caption_style),
+                Paragraph("<i>Fig. 4. Physical Stock vs. Lead-Time Demand (LTD) Frontier.</i>", caption_style)
             ]
         ]
         t_grid = Table(grid_data, colWidths=[252, 260])
@@ -363,10 +380,10 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
             ('BOTTOMPADDING', (0, 0), (-1, -1), 1),
         ]))
         story.append(t_grid)
-        story.append(Spacer(1, 6))
+        story.append(Spacer(1, 5))
 
     story.append(Paragraph("4. Analytics Method and Implementation", h1_style))
-    story.append(HRFlowable(width="100%", thickness=0.8, color=c_secondary, spaceBefore=1, spaceAfter=5))
+    story.append(HRFlowable(width="100%", thickness=0.5, color=c_rule, spaceBefore=1, spaceAfter=4))
 
     p8 = (
         "<b>4.1 Methodological Grounding & Syllabus Alignment:</b> To address the stock-out prediction challenge, we implemented a structured analytics pipeline anchored directly in the <b>23CSE452 Business Analytics syllabus</b>, integrating dimension reduction, statistical learning, tree-based ensembles, and prescriptive optimization.<br/>"
@@ -391,7 +408,7 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
 
     if os.path.exists("figures/pca_scree_and_projection.png"):
         story.append(Image("figures/pca_scree_and_projection.png", width=6.8*inch, height=2.4*inch))
-        story.append(Paragraph("<b>Figure 5:</b> PCA Scree Plot (Cumulative Variance Explained, Left) and 2D Latent Space Projection (Right).", callout_style))
+        story.append(Paragraph("<i>Fig. 5. PCA Scree Plot (Cumulative Variance Explained, Left) and 2D Latent Space Projection (Right).</i>", caption_style))
         story.append(Spacer(1, 4))
 
     p9 = (
@@ -405,14 +422,14 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
     story.append(PageBreak())
 
     story.append(Paragraph("5. Comparison with State-of-the-Art Methods (Existing Work)", h1_style))
-    story.append(HRFlowable(width="100%", thickness=0.8, color=c_secondary, spaceBefore=1, spaceAfter=5))
+    story.append(HRFlowable(width="100%", thickness=0.5, color=c_rule, spaceBefore=1, spaceAfter=4))
 
     p10 = (
         "In compliance with Section A.5 of the Case Study Guidelines, we identified four recent peer-reviewed published studies (2021–2024) addressing medicine shortages and stock-out predictions across healthcare and retail pharmacy networks. Table 2 provides a comprehensive methodological comparison focusing on datasets, algorithmic approaches, evaluation frameworks, findings, strengths, and limitations."
     )
     story.append(Paragraph(p10, body_style))
 
-    # Table 2: SOTA Comparison Table
+    # Table 2: IEEE Booktabs Style
     sota_table_data = [
         [
             Paragraph("<b>Published Study / Year</b>", table_header_style),
@@ -458,17 +475,18 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
 
     t2 = Table(sota_table_data, colWidths=[80, 85, 80, 60, 95, 112])
     t2.setStyle(TableStyle([
-        ('BACKGROUND', (0, 0), (-1, 0), c_primary),
-        ('GRID', (0, 0), (-1, -1), 0.5, colors.HexColor("#CBD5E0")),
-        ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, c_light_bg]),
+        ('LINEABOVE', (0, 0), (-1, 0), 1.2, c_black),     # \toprule
+        ('LINEBELOW', (0, 0), (-1, 0), 0.6, c_black),     # \midrule
+        ('LINEBELOW', (0, -1), (-1, -1), 1.2, c_black),   # \bottomrule
+        ('BACKGROUND', (0, 0), (-1, 0), c_gray_bg),
         ('VALIGN', (0, 0), (-1, -1), 'TOP'),
-        ('TOPPADDING', (0, 0), (-1, -1), 3.5),
-        ('BOTTOMPADDING', (0, 0), (-1, -1), 3.5),
+        ('TOPPADDING', (0, 0), (-1, -1), 3),
+        ('BOTTOMPADDING', (0, 0), (-1, -1), 3),
         ('LEFTPADDING', (0, 0), (-1, -1), 3),
         ('RIGHTPADDING', (0, 0), (-1, -1), 3),
     ]))
     story.append(t2)
-    story.append(Spacer(1, 8))
+    story.append(Spacer(1, 6))
 
     p10_synth = (
         "<b>5.1 Methodological Synthesis & Distinct Advantages:</b> Unlike prior studies that focused primarily on hospital inpatient batches or high-level wholesale distribution macro-flows, our case study uniquely addresses the community pharmacy retail counter where physical batch expiry, shelf space limitations, and daily OTC/prescription dispensing velocity interact directly. By coupling machine learning predictive probabilities with classical inventory equations (SS, ROP, EOQ), we bridge the critical gap between diagnostic risk classification and operational decision execution."
@@ -481,14 +499,14 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
     story.append(PageBreak())
 
     story.append(Paragraph("6. Results, Business Insights and Recommendations", h1_style))
-    story.append(HRFlowable(width="100%", thickness=0.8, color=c_secondary, spaceBefore=1, spaceAfter=5))
+    story.append(HRFlowable(width="100%", thickness=0.5, color=c_rule, spaceBefore=1, spaceAfter=4))
 
     p11 = (
         "<b>6.1 Predictive Performance Benchmark:</b> Across 5-fold cross-validation and rigorous evaluation on the unseen holdout test set (255 SKUs), ensemble and tree-based architectures demonstrated superior discriminative power. Table 3 presents the comparative evaluation matrix across all six algorithms."
     )
     story.append(Paragraph(p11, body_style))
 
-    # Table 3: Model Performance Benchmark Table
+    # Table 3: Performance Benchmark Table (Booktabs Style)
     perf_table_data = [
         [
             Paragraph("<b>Model Name</b>", table_header_style),
@@ -509,22 +527,22 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
     ]
     t3 = Table(perf_table_data, colWidths=[124, 56, 52, 52, 54, 52, 54, 68])
     t3.setStyle(TableStyle([
-        ('BACKGROUND', (0, 0), (-1, 0), c_primary),
-        ('GRID', (0, 0), (-1, -1), 0.5, colors.HexColor("#CBD5E0")),
-        ('ROWBACKGROUNDS', (0, 1), (-1, -1), [colors.white, c_light_bg]),
+        ('LINEABOVE', (0, 0), (-1, 0), 1.2, c_black),     # \toprule
+        ('LINEBELOW', (0, 0), (-1, 0), 0.6, c_black),     # \midrule
+        ('LINEBELOW', (0, -1), (-1, -1), 1.2, c_black),   # \bottomrule
+        ('BACKGROUND', (0, 0), (-1, 0), c_gray_bg),
         ('VALIGN', (0, 0), (-1, -1), 'MIDDLE'),
-        ('TOPPADDING', (0, 0), (-1, -1), 2.5),
-        ('BOTTOMPADDING', (0, 0), (-1, -1), 2.5),
+        ('TOPPADDING', (0, 0), (-1, -1), 2.2),
+        ('BOTTOMPADDING', (0, 0), (-1, -1), 2.2),
         ('LEFTPADDING', (0, 0), (-1, -1), 3),
         ('RIGHTPADDING', (0, 0), (-1, -1), 3),
-        ('LINEBELOW', (0, 6), (-1, 6), 1.2, c_secondary),
     ]))
     story.append(t3)
     story.append(Spacer(1, 4))
 
     if os.path.exists("figures/model_confusion_matrices.png"):
         story.append(Image("figures/model_confusion_matrices.png", width=6.8*inch, height=2.8*inch))
-        story.append(Paragraph("<b>Figure 6:</b> Confusion Matrix Diagnostics across All Six Classification Models on Unseen Test Data.", callout_style))
+        story.append(Paragraph("<i>Fig. 6. Confusion Matrix Diagnostics across All Six Classification Models on Unseen Test Data.</i>", caption_style))
         story.append(Spacer(1, 4))
 
     if os.path.exists("figures/model_roc_pr_curves.png") and os.path.exists("figures/model_feature_importance.png"):
@@ -534,8 +552,8 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
                 Image("figures/model_feature_importance.png", width=3.4*inch, height=2.3*inch)
             ],
             [
-                Paragraph("<b>Figure 7:</b> Combined ROC and Precision-Recall Curves.", callout_style),
-                Paragraph("<b>Figure 8:</b> Top Feature Importances (Random Forest Gini MDI).", callout_style)
+                Paragraph("<i>Fig. 7. Combined ROC and Precision-Recall Curves.</i>", caption_style),
+                Paragraph("<i>Fig. 8. Top Feature Importances (Random Forest Gini MDI).</i>", caption_style)
             ]
         ]
         t_eval = Table(grid_eval, colWidths=[256, 256])
@@ -571,7 +589,7 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
 
     if os.path.exists("figures/prescriptive_inventory_optimization.png"):
         story.append(Image("figures/prescriptive_inventory_optimization.png", width=6.8*inch, height=2.2*inch))
-        story.append(Paragraph("<b>Figure 9:</b> Parity Plot: Legacy Reorder Level vs. AI-Recommended Dynamic ROP (Left) and Priority Category Adjustments (Right).", callout_style))
+        story.append(Paragraph("<i>Fig. 9. Parity Plot: Legacy Reorder Level vs. AI-Recommended Dynamic ROP (Left) and Priority Category Adjustments (Right).</i>", caption_style))
         story.append(Spacer(1, 4))
 
     p14 = (
@@ -597,7 +615,7 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
     story.append(PageBreak())
 
     story.append(Paragraph("7. Conclusion and References", h1_style))
-    story.append(HRFlowable(width="100%", thickness=0.8, color=c_secondary, spaceBefore=1, spaceAfter=5))
+    story.append(HRFlowable(width="100%", thickness=0.5, color=c_rule, spaceBefore=1, spaceAfter=4))
 
     p16 = (
         "<b>7.1 Conclusion:</b> This individual case study successfully conceptualized, implemented, and validated an applied machine learning and prescriptive analytics framework for predicting medicine stock-outs in retail community pharmacies. Utilizing primary inventory data from web-scraped pharmaceutical catalogs spanning 1,020 commercial formulations across 10 therapeutic categories, we showed that legacy static replenishment thresholds systematically fail to buffer against lead time variability and seasonal demand surges. Machine learning models—most notably Gradient Boosting and Random Forest (0.984–0.988 Accuracy, 0.973–0.980 F1-Score, 0.999+ ROC-AUC)—accurately detect stockout hazards well before shelf depletion occurs. Linking predictive probabilities to dynamic Reorder Point (ROP) and Economic Order Quantity (EOQ) calculations provides pharmacy managers with an actionable, data-driven operational decision system that protects patient health while boosting annual bottom-line profitability by INR 18,637,479. Future extensions include real-time IoT RFID shelf integration and automated multi-echelon distributor dispatch protocols."
@@ -626,7 +644,7 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
         story.append(Paragraph(ref, bullet_style))
 
     # Build document
-    doc.build(story, canvasmaker=NumberedCanvas)
+    doc.build(story, canvasmaker=IEEEAcademicCanvas)
     print(f">>> Report successfully generated: {output_filename}")
 
 

@@ -56,7 +56,8 @@ In strict compliance with the **23CSE452 Business Analytics submission guideline
 
 ```text
 pharmacy-stockout-prediction/
-├── Case_Study_Report.pdf          # Final publication-grade 9-page Case Study Report
+├── Case_Study_Report.pdf          # Final IEEE-formatted 9-page Case Study Report (Black & White)
+├── Case_Study_Report.md           # Full formal academic Markdown manuscript with formulas & citations
 ├── analysis.ipynb                 # Complete executed Jupyter Notebook with all outputs & plots
 ├── README.md                      # Comprehensive case study documentation and instructions
 ├── requirements.txt               # Python package dependencies
