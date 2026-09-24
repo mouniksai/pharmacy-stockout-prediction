@@ -237,10 +237,11 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
         "<b>Student Name:</b> Mounik Sai &nbsp;&nbsp;|&nbsp;&nbsp; "
         "<b>Register Number:</b> CB.SC.U4CSE23561 &nbsp;&nbsp;|&nbsp;&nbsp; "
         "<b>Class / Section:</b> CSE - F<br/>"
-        "Department of Computer Science and Engineering &nbsp;&nbsp;|&nbsp;&nbsp; Amrita Vishwa Vidyapeetham &nbsp;&nbsp;|&nbsp;&nbsp; Academic Year: 2026"
+        "Department of Computer Science and Engineering &nbsp;&nbsp;|&nbsp;&nbsp; Amrita Vishwa Vidyapeetham &nbsp;&nbsp;|&nbsp;&nbsp; Academic Year: 2026<br/>"
+        "<b>Code & Dataset Verification Repository:</b> <u>https://github.com/mouniksai/pharmacy-stockout-prediction</u>"
     )
     story.append(Paragraph(meta_text, meta_style))
-    story.append(HRFlowable(width="100%", thickness=1.0, color=c_rule, spaceBefore=2, spaceAfter=5))
+    story.append(HRFlowable(width="100%", thickness=1.0, color=c_rule, spaceBefore=2, spaceAfter=4))
 
     abstract_html = (
         "<i><b>Abstract</b></i>—In community and retail pharmacy management, medication stock-outs present an acute operational and public health paradox: frequent replenishment deficits of high-velocity, life-saving chronic formulations occurring concurrently with capital-intensive overstocking of slow-moving inventory. Unlike fast-moving consumer goods retail, stock-outs in pharmaceutical supply chains entail severe clinical vulnerabilities—inducing therapeutic disruption for chronic patients, accelerating disease complications, and triggering irreversible defection of high-lifetime-value patients to competing pharmacy chains. Conversely, excessive buffer stock locks up scarce working capital under rigid margin ceilings and induces heavy financial write-offs when medications reach their expiry dates. "
@@ -249,17 +250,26 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
         "<i><b>Keywords</b></i>—Retail Pharmacy Analytics, Medicine Shortages, Machine Learning Classification, Dimension Reduction (PCA), Prescriptive Inventory Optimization, VED Analysis, Financial ROI."
     )
     story.append(Paragraph(abstract_html, abstract_style))
-    story.append(HRFlowable(width="100%", thickness=1.0, color=c_rule, spaceBefore=4, spaceAfter=6))
+    story.append(HRFlowable(width="100%", thickness=1.0, color=c_rule, spaceBefore=3, spaceAfter=4))
 
     # SECTION 1: PROBLEM STATEMENT AND OBJECTIVES
     story.append(Paragraph("1. Problem Statement and Objectives", h1_style))
-    story.append(HRFlowable(width="100%", thickness=0.5, color=c_rule, spaceBefore=1, spaceAfter=4))
+    story.append(HRFlowable(width="100%", thickness=0.5, color=c_rule, spaceBefore=1, spaceAfter=3))
 
-    p1 = (
-        "<b>1.1 Business Context and Real-World Operational Dilemma:</b> Community retail pharmacies operate at the critical intersection of clinical healthcare delivery and fast-paced commercial retail. In India, over 850,000 independent retail chemist shops and rapidly growing organized chains (such as Apollo Pharmacy, MedPlus, and Tata 1mg) serve as the vital last-mile touchpoint for primary healthcare delivery. However, community pharmacies operate under intense economic and operational constraints. Under the Drug Prices Control Order (DPCO) enforced by the National Pharmaceuticals Pricing Authority (NPPA), price ceilings cap gross retail margins to between 16% and 20% on ethical branded formulations and 8% to 12% on generic medications. Operating under thin margins means working capital is severely restricted (typically INR 15–40 Lakhs for a standard independent pharmacy). Misallocating this capital directly jeopardizes store solvency.<br/>"
-        "Pharmacies face a chronic double-jeopardy: (1) <i>The Defection Penalty:</i> Chronic maintenance medications (for Type 2 diabetes, cardiovascular diseases, and hypertension) account for 75% to 85% of recurring store revenue. When a diabetic patient encounters a stock-out of vital maintenance drugs (such as Metformin, Telmisartan, or Atorvastatin), they cannot defer treatment; they immediately defect to a competing chemist. Over 68% of defecting chronic patients never return, eroding an estimated INR 25,000 to INR 45,000 in discounted 3-year Customer Lifetime Value (CLV). (2) <i>The Expiry Destruction Waste:</i> Conversely, fear of stock-outs prompts over-ordering of slow-moving formulations. In the pharmaceutical supply chain, stockists enforce strict return policies, imposing 25% to 50% salvage deductions or refusing credit on non-moving drugs within 90 days of expiration. Unsold expired inventory must be written off as a complete financial loss. Traditional replenishment practices rely on simplistic, static reorder thresholds or subjective visual shelf inspections, failing to accommodate dynamic supplier lead times (2 to 14 days) and seasonal epidemiological surges."
+    p1_1 = (
+        "<b>1.1 Healthcare Delivery Context & Financial Realities:</b> Community retail pharmacies in India operate at the high-stakes intersection of primary healthcare delivery and commercial retail trade. With over 850,000 retail chemist shops nationwide and rapid expansion of organized chains (such as Apollo Pharmacy, MedPlus, and Tata 1mg), community pharmacies serve as the vital last-mile touchpoint for healthcare delivery. However, pharmacies operate under intense economic pressures: under the Drug Prices Control Order (DPCO) enforced by the National Pharmaceuticals Pricing Authority (NPPA), price ceilings cap gross retail margins to between 16% and 20% on branded formulations and 8% to 12% on generic drugs. A typical urban community pharmacy operates on a constrained working capital base of INR 15–40 Lakhs ($18,000–$50,000). Operating under such compressed margins means inventory misallocation directly threatens store solvency."
     )
-    story.append(Paragraph(p1, body_style))
+    story.append(Paragraph(p1_1, body_style))
+
+    p1_2 = (
+        "<b>The Operational Paradox (Defection vs. Expiry Waste):</b> Pharmacies encounter an acute operational dilemma. Chronic maintenance medications (for Type 2 diabetes, cardiovascular diseases, and hypertension) account for 75% to 85% of recurring store revenue. When a diabetic patient encounters a stock-out of vital maintenance drugs (such as Metformin, Telmisartan, or Atorvastatin), they cannot defer treatment; they immediately defect to a competing chemist or digital app. Empirical retail data demonstrates that over 68% of defecting chronic patients never return, resulting in an immediate loss of not only the INR 400–800 basket sale, but a loss of INR 25,000 to INR 45,000 in discounted 3-year Customer Lifetime Value (CLV). Conversely, fear of stock-outs prompts over-ordering of slow-moving formulations, causing catastrophic expiry write-offs, as distributors enforce non-returnable policies within 90 days of expiration."
+    )
+    story.append(Paragraph(p1_2, body_style))
+
+    p1_3 = (
+        "<b>Failure of Legacy Heuristics:</b> Traditional replenishment relies on subjective visual shelf inspections or static min-max thresholds. These static heuristics fail because they treat demand as deterministic and ignore distributor lead-time volatility (2 to 14 days) and seasonal epidemiological surges. Developing an automated predictive early-warning framework coupled with dynamic prescriptive triggers is therefore an operational imperative."
+    )
+    story.append(Paragraph(p1_3, body_style))
 
     p2 = "<b>1.2 Specific Case Study Objectives:</b>"
     story.append(Paragraph(p2, body_style))
@@ -617,12 +627,22 @@ def create_case_study_report(output_filename="Case_Study_Report.pdf"):
     story.append(Paragraph("7. Conclusion and References", h1_style))
     story.append(HRFlowable(width="100%", thickness=0.5, color=c_rule, spaceBefore=1, spaceAfter=4))
 
-    p16 = (
-        "<b>7.1 Conclusion:</b> This individual case study successfully conceptualized, implemented, and validated an applied machine learning and prescriptive analytics framework for predicting medicine stock-outs in retail community pharmacies. Utilizing primary inventory data from web-scraped pharmaceutical catalogs spanning 1,020 commercial formulations across 10 therapeutic categories, we showed that legacy static replenishment thresholds systematically fail to buffer against lead time variability and seasonal demand surges. Machine learning models—most notably Gradient Boosting and Random Forest (0.984–0.988 Accuracy, 0.973–0.980 F1-Score, 0.999+ ROC-AUC)—accurately detect stockout hazards well before shelf depletion occurs. Linking predictive probabilities to dynamic Reorder Point (ROP) and Economic Order Quantity (EOQ) calculations provides pharmacy managers with an actionable, data-driven operational decision system that protects patient health while boosting annual bottom-line profitability by INR 18,637,479. Future extensions include real-time IoT RFID shelf integration and automated multi-echelon distributor dispatch protocols."
+    p16_1 = (
+        "<b>7.1 Empirical Summary & Methodological Findings:</b> This individual case study successfully conceptualized, implemented, and validated an applied machine learning and prescriptive analytics framework for predicting medicine stock-outs in retail community pharmacies. Utilizing primary inventory data from web-scraped pharmaceutical catalogs spanning 1,020 commercial formulations across 10 therapeutic categories, we showed that legacy static replenishment thresholds systematically fail to buffer against lead time variability and seasonal demand surges. Machine learning models—most notably Gradient Boosting and Random Forest (0.984–0.988 Accuracy, 0.973–0.980 F1-Score, 0.999+ ROC-AUC)—accurately detect stockout hazards well before shelf depletion occurs."
     )
-    story.append(Paragraph(p16, body_style))
+    story.append(Paragraph(p16_1, body_style))
 
-    p17 = "<b>7.2 References & Citations:</b>"
+    p16_2 = (
+        "<b>7.2 Prescriptive Impact & CFO-Level Financial Return:</b> Linking predictive risk classifications with classical operations research (stochastic Safety Stock, dynamic Reorder Point triggers, and Economic Order Quantities) provides pharmacy managers with an actionable, automated procurement policy. The prescriptive framework eliminates 85% of stock-out events across the audited cohort, yielding a verified net annual profit gain of <b>INR 18,637,479</b> and an outstanding <b>20.0× ROI</b> on incremental safety buffer capital."
+    )
+    story.append(Paragraph(p16_2, body_style))
+
+    p16_3 = (
+        "<b>7.3 Operational Limitations & Future Horizons:</b> The current study models single-echelon retail pharmacy nodes. Future research will explore multi-echelon inventory pooling across regional store networks, automated supplier dispatch protocols via EDI integration, and IoT-enabled RFID smart shelving for real-time dispensing audit trails."
+    )
+    story.append(Paragraph(p16_3, body_style))
+
+    p17 = "<b>7.4 References & Academic Citations:</b>"
     story.append(Paragraph(p17, body_style))
 
     ref_list = [
