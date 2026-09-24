@@ -1,19 +1,36 @@
 # Business Analytics Case Study: Comprehensive Compliance & Worthiness Audit
 
-**Target Document Audited:** [`/Users/mouniksai/Downloads/Business_Analytics_Case_Study_Submission.docx`](file:///Users/mouniksai/Downloads/Business_Analytics_Case_Study_Submission.docx)  
+**Target Documents Audited:**
+1. [`/Users/mouniksai/Downloads/Business_Analytics_Case_Study_Submission.docx`](file:///Users/mouniksai/Downloads/Business_Analytics_Case_Study_Submission.docx) (Case Study Submission Guidelines & 8–10 Page Requirement)
+2. [`/Users/mouniksai/Downloads/Individual_Case_Study_Business_Analytics_15_Marks(1).docx`](file:///Users/mouniksai/Downloads/Individual_Case_Study_Business_Analytics_15_Marks(1).docx) (Official 15-Marks Evaluation Rubric)
+
 **Project Repository:** [`/Users/mouniksai/Documents/pharmacy-stockout-prediction`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction)  
-**Deliverables Evaluated:** [`Case_Study_Report.pdf`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/Case_Study_Report.pdf) (IEEE B&W Format), [`Case_Study_Report.md`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/Case_Study_Report.md), [`README.md`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/README.md), [`analysis.ipynb`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/analysis.ipynb), [`data/`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/data), [`figures/`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/figures), [`src/`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/src)  
+**Deliverables Evaluated:** [`Case_Study_Report.pdf`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/Case_Study_Report.pdf) (IEEE B&W Format, exactly 9 pages), [`Case_Study_Report.md`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/Case_Study_Report.md), [`README.md`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/README.md), [`analysis.ipynb`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/analysis.ipynb), [`data/`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/data), [`figures/`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/figures), [`src/`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/src)  
 **Author / Candidate:** Mounik Sai (Reg: CB.SC.U4CSE23561) | Class: CSE - F | Course: 23CSE452 Business Analytics  
 
 ---
 
-## 1. Executive Summary: Overall Audit Scorecard
+## 1. Official 15-Marks Evaluation Rubric Scorecard
+
+| Rubric Component | Max Marks | Implementation & Concrete Repository Evidence | Verified Score |
+| :--- | :---: | :--- | :---: |
+| **1. Business Problem Formulation** | **2** | • Original problem in Healthcare Retail Analytics: the community pharmacy inventory paradox (fatal stock-outs of vital medicines vs. non-returnable expiry write-offs under DPCO price controls).<br>• 3 measurable objectives defined (predictive classification, operational driver ranking, prescriptive inventory optimization). | **2 / 2 (Full Marks)** |
+| **2. Data Collection (min. 100 records)** | **3** | • **1,020 SKUs** collected (10× the 100-record threshold) across 10 therapeutic categories.<br>• Automated web scraping ([`src/web_scraper.py`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/src/web_scraper.py)) targeting public catalogs (Tata 1mg & Apollo Pharmacy). Zero canned Kaggle/UCI downloads.<br>• **Apify Web Scraper** utilized for exploratory DOM schema discovery and pagination analysis.<br>• Packaged in both CSV and multi-sheet Excel format ([`data/pharmacy_stockout_dataset.xlsx`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/data/pharmacy_stockout_dataset.xlsx)). | **3 / 3 (Full Marks)** |
+| **3. Data Preprocessing** | **3** | • 0 missing values verified; batch dates converted to continuous months.<br>• Integrated **Workik** for baseline Pandas schema wrangling, followed by rigorous student validation and domain refactoring.<br>• Formulated core inventory science metrics: Days of Inventory ($DOI$), Lead Time Demand ($LTD$), Buffer Ratio, and Stock-to-Reorder Ratio.<br>• Integrated into scikit-learn preprocessing pipelines (`StandardScaler`, `OneHotEncoder`). | **3 / 3 (Full Marks)** |
+| **4. Exploratory Data Analysis & Visualization** | **3** | • 5 publication-grade figures in pure grayscale / academic styling.<br>• Univariate distribution skews, cross-category stockout rates, VED criticality breakdown, correlation heatmaps, and stock vs. LTD risk frontiers.<br>• In-depth analytical interpretations directly informing modeling decisions. | **3 / 3 (Full Marks)** |
+| **5. Predictive / Classification Modeling & Evaluation** | **2** | • 6 syllabus algorithms (Logistic Regression, CART, Random Forest, $k$-NN, Naïve Bayes, Gradient Boosting) + PCA.<br>• 5-Fold Stratified Cross-Validation on training set + holdout test evaluation.<br>• Comprehensive metric suite: Accuracy, Precision, Recall, F1-Score, ROC-AUC, 2×3 confusion matrix grid, ROC & PR curves. Explicit overfitting controls. | **2 / 2 (Full Marks)** |
+| **6. Business Insights & Recommendations** | **2** | • Gini MDI driver ranking (Buffer Ratio 37.4%, Stock-to-ROP 29.7%).<br>• Prescriptive operations research policy: Safety Stock ($SS$), Dynamic Reorder Point ($ROP$), and Economic Order Quantity ($EOQ$).<br>• Board-level financial ROI model: **INR 18,637,479 net annual profit benefit / 20.0× ROI**.<br>• 3 concrete managerial directives. | **2 / 2 (Full Marks)** |
+| **Total Evaluation Score** | **15** | **Fully meets and exceeds all rubric requirements. Report strictly formatted to 9 pages (satisfies 8–10 page specification).** | **15 / 15 Marks** |
+
+---
+
+## 2. Submission Guidelines & Formatting Audit Scorecard
 
 | Evaluation Dimension | Required Standard | Current Implementation | Compliance Status |
 | :--- | :--- | :--- | :---: |
 | **Styling & Aesthetics** | Academic / IEEE formatting (Black & White, no AI-look colors) | Times-Roman typography, LaTeX `booktabs` tables, pure black rules/headers, zero blue/color card boxes | **100% (Passed)** |
 | **Section A: Report Format & Sections (1–7)** | Strict adherence to 7 structured sections | All 7 sections fully developed and formally articulated | **100% (Passed)** |
-| **Suggested Report Length** | 8–10 pages (excl. references & appendix) | Exactly **9 pages** (Pages 1–8 core analysis; Page 9 conclusion & references) | **100% (Passed)** |
+| **Report Page Length** | 8–10 pages (excl. references & appendix) | Exactly **9 pages** (Pages 1–8 core analysis; Page 9 conclusion & references) | **100% (Passed)** |
 | **Markdown Manuscript** | Full Markdown draft before PDF | Complete [`Case_Study_Report.md`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/Case_Study_Report.md) authored with all formulas & tables | **100% (Passed)** |
 | **Primary Data Collection Rule** | No Kaggle/UCI/GitHub dumps; Scraped or surveyed | Automated Python web scraper ([`src/web_scraper.py`](file:///Users/mouniksai/Documents/pharmacy-stockout-prediction/src/web_scraper.py)) targeting Tata 1mg & Apollo Pharmacy catalogs | **100% (Passed)** |
 | **Dataset Scale & Integrity** | Clear source, records, attributes, anonymized | 1,020 SKUs, 10 therapeutic categories, 26 features, zero PII, verified | **100% (Passed)** |
@@ -26,7 +43,7 @@
 
 ---
 
-## 2. Item-by-Item Requirement Verification Matrix
+## 3. Item-by-Item Requirement Verification Matrix
 
 ### Section A: Case Study Report Format
 
@@ -54,7 +71,7 @@
 
 ---
 
-## 3. In-Depth Justification Audit
+## 4. In-Depth Justification Audit
 
 A critical instruction in the prompt is to verify whether **all justifications have been thoroughly articulated**. Here is the audit of each justification:
 
@@ -103,7 +120,7 @@ A critical instruction in the prompt is to verify whether **all justifications h
 
 ---
 
-## 4. "Is Our Case Study Worth?" — Value, Merit, and Impact Assessment
+## 5. "Is Our Case Study Worth?" — Value, Merit, and Impact Assessment
 
 To answer whether the case study is "worth it," we evaluated the project from three perspectives: Academic Merit, Industry/Business Utility, and Evaluator/Faculty Perception:
 
@@ -120,7 +137,7 @@ To answer whether the case study is "worth it," we evaluated the project from th
 
 ---
 
-## 5. Verification Checklist & Submission Readiness
+## 6. Verification Checklist & Submission Readiness
 
 - [x] **Report Format:** Formatted into Sections 1 through 7 exactly as specified in Section A.
 - [x] **Page Count:** 9 pages total (fits the 8–10 page target).
